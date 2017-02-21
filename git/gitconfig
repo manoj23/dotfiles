@@ -1,0 +1,15 @@
+[core]
+	editor = vim
+[user]
+	name = Georges Savoundararadj
+[color]
+	ui = auto
+
+[alias]
+	st = status
+	b = branch
+	d = diff
+	co = checkout
+	sh = show
+[push]
+	default = simple
