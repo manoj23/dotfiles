@@ -11,5 +11,8 @@
 	d = diff
 	co = checkout
 	sh = show
+	g = grep
+	cp = cherry-pick
+
 [push]
 	default = simple
