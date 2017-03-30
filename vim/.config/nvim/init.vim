@@ -43,6 +43,8 @@ autocmd BufWritePost * exec "DeleteTrailingWhitespace"
 highlight LineNr ctermbg=16
 set list listchars=tab:→\ ,trail:⋅,extends:»,precedes:«,nbsp:⎵,space:⎵
 
+set colorcolumn=80
+
 let g:chromatica#enable_at_startup=1
 let g:chromatica#responsive_mode=1
 let g:chromatica#delay_ms=1
