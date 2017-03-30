@@ -33,7 +33,7 @@ nnoremap <F4> :bd<CR>
 nnoremap <F5> :tabp<CR>
 nnoremap <F6> :tabn<CR>
 nnoremap <F7> :tabc<CR>
-nnoremap <F8> :bn<CR>
+nnoremap <F8> :SyntasticToggleMode<CR>
 nnoremap <F9> :set hlsearch<CR>
 nnoremap <F10> :nohlsearch<CR>
 nnoremap <F12> :set list!<CR>:redraw!<CR>
@@ -49,5 +49,4 @@ let g:chromatica#delay_ms=1
 let g:deoplete#enable_at_startup = 1
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
