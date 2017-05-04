@@ -90,6 +90,14 @@ android_make_ramdisk()
 	find $1 | cpio -o -H newc | gzip > $2.cpio.gz
 }
 
+hexstring_to_binary()
+{
+	if [ ! -z $1 ]; then
+		# http://stackoverflow.com/a/7681385
+		echo -n $1 | sed 's/\([0-9A-F]\{2\}\)/\\\\\\x\1/gI' | xargs printf
+	fi
+}
+
 if [[ $(whoami) == "root" ]]; then
 	PS1='\[\e[0;31m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[0;31m\]\$ \[\e[m\]\[\e[0;32m\]'
 else
