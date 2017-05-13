@@ -40,6 +40,7 @@ nnoremap <F12> :set list!<CR>:redraw!<CR>
 
 autocmd BufWritePost * exec "DeleteTrailingWhitespace"
 
+highlight Visual ctermbg=226
 highlight LineNr ctermbg=16
 set list listchars=tab:→\ ,trail:⋅,extends:»,precedes:«,nbsp:⎵,space:⎵
 
