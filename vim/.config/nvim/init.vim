@@ -62,7 +62,8 @@ nnoremap <F12> :set list!<CR>:redraw!<CR>
 
 autocmd BufWritePost * exec "DeleteTrailingWhitespace"
 
-highlight Visual ctermbg=226
+highlight Comment ctermfg=33
+highlight Visual ctermbg=238
 highlight LineNr ctermbg=16
 
 
