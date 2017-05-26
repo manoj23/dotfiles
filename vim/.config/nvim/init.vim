@@ -37,6 +37,7 @@ set inccommand=nosplit
 set laststatus=1
 set list listchars=tab:→\ ,trail:⋅,extends:»,precedes:«,nbsp:⎵,space:⎵
 set mouse=a
+set noshowmode
 set nu
 set showmatch
 set switchbuf=usetab
