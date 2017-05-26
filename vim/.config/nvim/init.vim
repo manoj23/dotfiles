@@ -53,8 +53,7 @@ nnoremap <F5> :tabp<CR>
 nnoremap <F6> :tabn<CR>
 nnoremap <F7> :tabc<CR>
 nnoremap <F8> :SyntasticToggleMode<CR>
-nnoremap <F9> :set hlsearch<CR>
-nnoremap <F10> :nohlsearch<CR>
+nnoremap <F9> :set hlsearch!<CR>
 nnoremap <F12> :set list!<CR>:redraw!<CR>
 
 autocmd BufWritePost * exec "DeleteTrailingWhitespace"
