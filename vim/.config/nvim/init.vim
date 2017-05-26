@@ -33,6 +33,7 @@ colorscheme molokai
 set autoindent
 set clipboard=unnamedplus
 set colorcolumn=80
+set inccommand=nosplit
 set laststatus=1
 set list listchars=tab:→\ ,trail:⋅,extends:»,precedes:«,nbsp:⎵,space:⎵
 set mouse=a
