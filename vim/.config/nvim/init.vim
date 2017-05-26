@@ -30,14 +30,20 @@ filetype plugin indent on
 syntax enable
 colorscheme molokai
 
-set nu
+set autoindent
+set clipboard=unnamedplus
+set colorcolumn=80
+set laststatus=1
+set list listchars=tab:→\ ,trail:⋅,extends:»,precedes:«,nbsp:⎵,space:⎵
 set mouse=a
+set nu
 set showmatch
 set switchbuf=usetab
-set autoindent
 set syntax=on
-set laststatus=1
-set clipboard=unnamedplus
+set undodir=$HOME/.config/nvim/undo/
+set undofile
+set undolevels=1000
+set undoreload=10000
 nnoremap <F2> :bp<CR>
 nnoremap <F3> :bn<CR>
 nnoremap <F4> :bd<CR>
@@ -53,14 +59,7 @@ autocmd BufWritePost * exec "DeleteTrailingWhitespace"
 
 highlight Visual ctermbg=226
 highlight LineNr ctermbg=16
-set list listchars=tab:→\ ,trail:⋅,extends:»,precedes:«,nbsp:⎵,space:⎵
 
-set colorcolumn=80
-
-set undofile
-set undodir=$HOME/.config/nvim/undo/
-set undolevels=1000
-set undoreload=10000
 
 let g:chromatica#enable_at_startup=1
 let g:chromatica#responsive_mode=1
