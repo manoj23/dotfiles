@@ -69,6 +69,7 @@ highlight LineNr ctermbg=16
 let g:chromatica#enable_at_startup=1
 let g:chromatica#responsive_mode=1
 let g:chromatica#delay_ms=1
+let g:ctrlp_cmd = 'CtrlPBuffer'
 let g:deoplete#enable_at_startup = 1
 let g:move_map_keys = 0
 let g:syntastic_always_populate_loc_list = 1
