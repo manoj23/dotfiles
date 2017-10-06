@@ -12,7 +12,6 @@ export HISTSIZE=
 export HISTCONTROL=erasedups
 export PATH=~/bin/:$PATH
 export LOCK_DIR="/var/lock/lockdev/"
-export auto_resume="substring"
 export CHERRY_PICK_DIR=
 export USE_CCACHE=1
 export LD_LIBRARY_PATH=~/lib:~/usr/lib:~/usr/lib64:$LD_LIBRARY_PATH
