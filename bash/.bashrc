@@ -7,15 +7,15 @@
 
 bind 'set show-all-if-ambiguous on'
 
+export CHERRY_PICK_DIR=
+export HISTCONTROL=erasedups
 export HISTFILESIZE=
 export HISTSIZE=
-export HISTCONTROL=erasedups
-export PATH=~/bin/:$PATH
-export LOCK_DIR="/var/lock/lockdev/"
-export CHERRY_PICK_DIR=
-export USE_CCACHE=1
 export LD_LIBRARY_PATH=~/lib:~/usr/lib:~/usr/lib64:$LD_LIBRARY_PATH
+export LOCK_DIR="/var/lock/lockdev/"
+export PATH=~/bin/:$PATH
 export PKG_CONFIG_PATH=~/lib/pkgconfig:~/usr/lib/pkgconfig:~/usr/lib64/pkgconfig:$PKG_CONFIG_PATH
+export USE_CCACHE=1
 
 [[ -s /usr/share/autojump/autojump.bash ]] && . /usr/share/autojump/autojump.bash
 [[ -s  ~/.bash_aliases ]] && . ~/.bash_aliases
