@@ -71,8 +71,7 @@ highlight Comment ctermfg=33
 highlight Visual ctermbg=238
 highlight LineNr ctermbg=16
 
-
-let g:ackprg = 'ag --vimgrep'
+let g:ackprg = 'rg --vimgrep'
 let g:chromatica#enable_at_startup=1
 let g:chromatica#responsive_mode=1
 let g:chromatica#delay_ms=1
