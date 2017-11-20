@@ -102,3 +102,6 @@ if [[ $(whoami) == "root" ]]; then
 else
 	PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1;37m\]'
 fi
+
+_completion_loader dd
+complete -F _dd -o nospace ee
