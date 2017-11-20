@@ -13,6 +13,8 @@ if dein#load_state('~/.config/nvim/plugins')
   call dein#add('haya14busa/incsearch.vim')
   call dein#add('haya14busa/vim-textobj-function-syntax')
   call dein#add('honza/vim-snippets')
+  call dein#add('junegunn/fzf', { 'build': './install', 'merged': 0 })
+  call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
   call dein#add('kana/vim-textobj-function')
   call dein#add('kana/vim-textobj-user')
   call dein#add('matze/vim-move')
@@ -106,3 +108,4 @@ function! SearchMultiLine(bang, ...)
  endif
 endfunction
 command! -bang -nargs=* -complete=tag S call SearchMultiLine(<bang>0, <f-args>)|normal! /<C-R>/<CR>
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
