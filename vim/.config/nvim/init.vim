@@ -37,6 +37,7 @@ syntax enable
 colorscheme molokai
 
 set autoindent
+set grepprg=rg\ --vimgrep
 set clipboard=unnamedplus
 set colorcolumn=80
 set inccommand=nosplit
