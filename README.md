@@ -10,7 +10,4 @@ My dotfiles managed with GNU stow.
 * tmux
 * vim (nvim)
 * Xresources
-
-
-### /etc:
 * git
