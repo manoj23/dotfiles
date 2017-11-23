@@ -9,6 +9,7 @@ My dotfiles managed with GNU stow.
 * screen
 * tmux
 * vim (nvim)
+* Xresources
 
 
 ### /etc:
