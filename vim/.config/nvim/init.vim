@@ -70,8 +70,6 @@ nnoremap <F8> :SyntasticToggleMode<CR>
 nnoremap <F9> :set hlsearch!<CR>
 nnoremap <F12> :set list!<CR>:redraw!<CR>
 
-autocmd BufWritePost * exec "DeleteTrailingWhitespace"
-
 highlight Comment ctermfg=33
 highlight Visual ctermbg=238
 highlight LineNr ctermbg=16
