@@ -4,31 +4,35 @@ if dein#load_state('~/.config/nvim/plugins')
   call dein#begin('~/.config/nvim/plugins')
 
   call dein#add('~/.config/nvim/bundles/repos/github.com/Shougo/dein.vim')
-  call dein#add('Shougo/deoplete.nvim')
-  call dein#add('Shougo/echodoc.vim')
-  call dein#add('SirVer/ultisnips')
-  call dein#add('arakashic/chromatica.nvim')
-  call dein#add('ctrlpvim/ctrlp.vim')
-  call dein#add('easymotion/vim-easymotion')
-  call dein#add('haya14busa/incsearch.vim')
-  call dein#add('haya14busa/vim-textobj-function-syntax')
-  call dein#add('honza/vim-snippets')
-  call dein#add('junegunn/fzf', { 'build': './install', 'merged': 0 })
-  call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
-  call dein#add('kana/vim-textobj-function')
-  call dein#add('kana/vim-textobj-user')
-  call dein#add('matze/vim-move')
-  call dein#add('mileszs/ack.vim')
-  call dein#add('sjl/gundo.vim')
-  call dein#add('terryma/vim-multiple-cursors')
-  call dein#add('tomasr/molokai')
-  call dein#add('tomtom/tcomment_vim')
-  call dein#add('tpope/vim-abolish')
-  call dein#add('tpope/vim-surround')
-  call dein#add('vim-scripts/DeleteTrailingWhitespace')
-  call dein#add('vim-syntastic/syntastic')
-  call dein#add('xolox/vim-easytags')
-  call dein#add('xolox/vim-misc')
+
+  call dein#load_dict({
+  \ 'Shougo/deoplete.nvim': { 'on_i': 1, 'on_ft': ['c', 'cpp'] },
+  \ 'Shougo/echodoc.vim': { 'on_i': 1, 'on_ft': ['c', 'cpp'] },
+  \ 'SirVer/ultisnips': { 'name': 'ultisnips', 'on_i': 1, 'on_ft': ['c', 'cpp', 'sh' ] },
+  \ 'arakashic/chromatica.nvim': { 'on_ft': ['c', 'cpp'] },
+  \ 'ctrlpvim/ctrlp.vim': {},
+  \ 'easymotion/vim-easymotion': { 'on_ft': ['c', 'cpp'] },
+  \ 'haya14busa/incsearch.vim': { 'on_ft': ['c', 'cpp'] },
+  \ 'haya14busa/vim-textobj-function-syntax': { 'on_ft': ['c', 'cpp'] },
+  \ 'honza/vim-snippets': { 'depends': 'ultisnip' },
+  \ 'junegunn/fzf': { 'name': 'fzf', 'build': './install', 'merged': 0 },
+  \ 'junegunn/fzf.vim': { 'depends': 'fzf' },
+  \ 'kana/vim-textobj-function': { 'on_ft': ['c', 'cpp'] },
+  \ 'kana/vim-textobj-user': { 'on_ft': ['c', 'cpp'] },
+  \ 'matze/vim-move': { 'on_ft': ['c', 'cpp'] },
+  \ 'mileszs/ack.vim': { 'on_ft': ['c', 'cpp'] },
+  \ 'sjl/gundo.vim': { 'on_ft': ['c', 'cpp'] },
+  \ 'terryma/vim-multiple-cursors': {},
+  \ 'tomasr/molokai': { 'merged': 0 },
+  \ 'tomtom/tcomment_vim': { 'on_ft': ['c', 'cpp', 'sh', 'vim' ] },
+  \ 'tpope/vim-abolish': {},
+  \ 'tpope/vim-surround': { 'on_ft': ['c', 'cpp'] },
+  \ 'vim-scripts/DeleteTrailingWhitespace': {},
+  \ 'vim-syntastic/syntastic': { 'on_ft': ['c', 'cpp', 'sh' ] },
+  \ 'xolox/vim-easytags': { 'on_ft': ['c', 'cpp'], 'depends': 'vim-misc' },
+  \ 'xolox/vim-misc': { 'name': 'vim-misc', 'on_ft': ['c', 'cpp'] },
+  \ 'tweekmonster/deoplete-clang2': { 'on_i': 1, 'on_ft': ['c', 'cpp'] }
+  \ })
 
   call dein#end()
   call dein#save_state()
