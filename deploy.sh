@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 stow bash
+sudo stow bash -t /root/
 stow ckermit
 stow git
 stow i3
