@@ -6,6 +6,7 @@ stow ckermit
 stow git
 stow i3
 stow screen
+stow termite
 stow tmux
 stow Xresources
 
