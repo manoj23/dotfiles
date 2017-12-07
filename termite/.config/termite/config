@@ -1,5 +1,6 @@
 [options]
 font = Terminus 12px
+scrollback_lines = -1
 
 [colors]
 foreground = #CCCCCC
