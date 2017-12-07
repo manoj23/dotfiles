@@ -1,7 +1,8 @@
 URxvt.scrollBar: false
 URxvt*fading: 10
-URxvt*font: xft:Terminus:size=12
-URxvt*urlLauncher: firefox  
+URxvt*font: xft:Terminus:pixelsize=12
+URxvt*boldFont: xft:Terminus:pixelsize=12
+URxvt*urlLauncher: firefox
 URxvt*scrollBar: false
 URxvt*scrollBar_right: true
 URxvt*scrollColor: #000000
