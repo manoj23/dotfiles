@@ -8,6 +8,7 @@
 bind 'set show-all-if-ambiguous on'
 
 export CHERRY_PICK_DIR=
+export EDITOR=nvim
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 export HISTCONTROL=erasedups
 export HISTFILESIZE=
