@@ -1,5 +1,6 @@
 davfs2/.davfs2/cache/
 davfs2/.davfs2/secrets
+vim/.config/nvim/.netrwhist
 vim/.config/nvim/bundles/*
 vim/.config/nvim/plugins/*
 vim/.config/nvim/undo/*
