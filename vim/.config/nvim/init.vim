@@ -10,7 +10,6 @@ if dein#load_state('~/.config/nvim/plugins')
   \ 'Shougo/echodoc.vim': { 'on_i': 1, 'on_ft': ['c', 'cpp'] },
   \ 'SirVer/ultisnips': { 'name': 'ultisnips', 'on_i': 1, 'on_ft': ['c', 'cpp', 'sh' ] },
   \ 'arakashic/chromatica.nvim': { 'on_ft': ['c', 'cpp'] },
-  \ 'ctrlpvim/ctrlp.vim': {},
   \ 'easymotion/vim-easymotion': { 'on_ft': ['c', 'cpp'] },
   \ 'haya14busa/incsearch.vim': { 'on_ft': ['c', 'cpp'] },
   \ 'haya14busa/vim-textobj-function-syntax': { 'on_ft': ['c', 'cpp'] },
@@ -84,8 +83,6 @@ let g:chromatica#enable_at_startup=1
 let g:chromatica#responsive_mode=1
 let g:chromatica#delay_ms=1
 let g:chromatica#libclang_path=split(system("clang --print-file-name=libclang.so"), '\n')[0]
-let g:ctrlp_cmd = 'CtrlPBuffer'
-let g:ctrlp_buffer_func = { 'enter': 'BrightHighlightOn', 'exit': 'BrightHighlightOff', }
 let g:deoplete#enable_at_startup = 1
 let g:easytags_async = 1
 let g:easytags_dynamic_files = 1
@@ -95,14 +92,6 @@ let g:move_map_keys = 0
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_wq = 1
-
-function BrightHighlightOn()
-  hi CursorLine ctermbg=21
-endfunction
-
-function BrightHighlightOff()
-  hi CursorLine ctermbg=43
-endfunction
 
 " http://vim.wikia.com/wiki/Search_across_multiple_lines
 function! SearchMultiLine(bang, ...)
