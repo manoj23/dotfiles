@@ -21,3 +21,6 @@
 
 [grep]
 	lineNumber = true
+
+[include]
+	path = ~/.gitconfig.specific
