@@ -18,6 +18,7 @@ if dein#load_state('~/.config/nvim/plugins')
   \ 'junegunn/fzf.vim': { 'depends': 'fzf' },
   \ 'kana/vim-textobj-function': { 'on_ft': ['c', 'cpp'] },
   \ 'kana/vim-textobj-user': { 'on_ft': ['c', 'cpp'] },
+  \ 'kergoth/vim-bitbake': {},
   \ 'LnL7/vim-nix': { 'on_ft': ['nix'] },
   \ 'matze/vim-move': {},
   \ 'mileszs/ack.vim': { 'on_ft': ['c', 'cpp'] },
