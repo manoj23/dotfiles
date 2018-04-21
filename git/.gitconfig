@@ -15,6 +15,7 @@
 	sh = show
 	g = grep
 	cp = cherry-pick
+	r = remote -v
 
 [push]
 	default = simple
