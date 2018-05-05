@@ -19,7 +19,9 @@ export PATH=~/bin/:$PATH
 export PKG_CONFIG_PATH=~/lib/pkgconfig:~/usr/lib/pkgconfig:~/usr/lib64/pkgconfig:$PKG_CONFIG_PATH
 export USE_CCACHE=1
 
+# shellcheck source=/dev/null
 [[ -s /usr/share/autojump/autojump.bash ]] && . /usr/share/autojump/autojump.bash
+# shellcheck source=/dev/null
 [[ -s  ~/.bash_aliases ]] && . ~/.bash_aliases
 
 shopt -s autocd
@@ -40,3 +42,6 @@ fi
 
 _completion_loader dd
 complete -F _dd -o nospace ee
+
+# shellcheck source=/dev/null
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
