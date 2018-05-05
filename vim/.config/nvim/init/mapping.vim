@@ -1,3 +1,4 @@
+cmap w!! w !sudo tee > /dev/null %
 vmap <C-Down> <Plug>MoveBlockDown
 vmap <C-Up> <Plug>MoveBlockUp
 nmap <C-Down> <Plug>MoveLineDown
