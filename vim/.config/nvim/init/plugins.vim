@@ -22,7 +22,7 @@ if dein#load_state('~/.config/nvim/plugins')
   \ 'LnL7/vim-nix': { 'on_ft': ['nix'] },
   \ 'matze/vim-move': {},
   \ 'mileszs/ack.vim': { 'on_ft': ['c', 'cpp'] },
-  \ 'sjl/gundo.vim': { 'on_ft': ['c', 'cpp'] },
+  \ 'sjl/gundo.vim': { 'on_ft': ['c', 'cpp', 'python', 'sh'] },
   \ 'terryma/vim-multiple-cursors': {},
   \ 'tomasr/molokai': { 'merged': 0 },
   \ 'tomtom/tcomment_vim': { 'on_ft': ['c', 'cpp', 'sh', 'vim' ] },
