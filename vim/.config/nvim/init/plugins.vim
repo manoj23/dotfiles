@@ -8,7 +8,7 @@ if dein#load_state('~/.config/nvim/plugins')
   call dein#load_dict({
   \ 'Shougo/deoplete.nvim': { 'on_i': 1, 'on_ft': ['c', 'cpp'] },
   \ 'Shougo/echodoc.vim': { 'on_i': 1, 'on_ft': ['c', 'cpp'] },
-  \ 'SirVer/ultisnips': { 'name': 'ultisnips', 'on_i': 1, 'on_ft': ['c', 'cpp', 'sh' ] },
+  \ 'SirVer/ultisnips': { 'name': 'ultisnips', 'on_i': 1, 'on_ft': ['c', 'cpp', 'python', 'sh' ] },
   \ 'arakashic/chromatica.nvim': { 'on_ft': ['c', 'cpp'] },
   \ 'easymotion/vim-easymotion': { 'on_ft': ['c', 'cpp'] },
   \ 'haya14busa/incsearch.vim': { 'on_ft': ['c', 'cpp'] },
