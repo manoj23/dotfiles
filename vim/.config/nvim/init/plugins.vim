@@ -25,7 +25,7 @@ if dein#load_state('~/.config/nvim/plugins')
   \ 'sjl/gundo.vim': { 'on_ft': ['c', 'cpp', 'python', 'sh'] },
   \ 'terryma/vim-multiple-cursors': {},
   \ 'tomasr/molokai': { 'merged': 0 },
-  \ 'tomtom/tcomment_vim': { 'on_ft': ['c', 'cpp', 'sh', 'vim' ] },
+  \ 'tomtom/tcomment_vim': { 'on_ft': ['c', 'cpp', 'python', 'sh', 'vim'] },
   \ 'tpope/vim-abolish': {},
   \ 'tpope/vim-surround': { 'on_ft': ['c', 'cpp'] },
   \ 'vim-scripts/DeleteTrailingWhitespace': {},
