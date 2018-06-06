@@ -15,6 +15,7 @@ if dein#load_state('~/.config/nvim/plugins')
   \ 'haya14busa/incsearch.vim': { 'on_ft': ['c', 'cpp'] },
   \ 'haya14busa/vim-textobj-function-syntax': { 'on_ft': ['c', 'cpp', 'python', 'sh'] },
   \ 'honza/vim-snippets': { 'depends': 'ultisnip' },
+  \ 'jiangmiao/auto-pairs':  { 'on_ft': ['c', 'cpp', 'python', 'sh'] },
   \ 'junegunn/fzf': { 'name': 'fzf', 'build': './install', 'merged': 0 },
   \ 'junegunn/fzf.vim': { 'depends': 'fzf' },
   \ 'kana/vim-textobj-function': { 'on_ft': ['c', 'cpp', 'python', 'sh'] },
