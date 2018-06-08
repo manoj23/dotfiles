@@ -16,6 +16,7 @@
 	g = grep
 	cp = cherry-pick
 	r = remote -v
+	f = fetch
 
 [push]
 	default = simple
