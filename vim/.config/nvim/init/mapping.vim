@@ -4,6 +4,7 @@ vmap <C-Up> <Plug>MoveBlockUp
 nmap <C-Down> <Plug>MoveLineDown
 nmap <C-Up> <Plug>MoveLineUp
 nmap <C-p> :Files<CR>
+nmap <C-b> :Buffers<CR>
 nnoremap <C-s> :w<CR>
 nnoremap <F2> :bp<CR>
 nnoremap <F3> :bn<CR>
