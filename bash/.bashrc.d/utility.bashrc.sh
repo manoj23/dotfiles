@@ -40,3 +40,8 @@ hexstring_to_binary()
 		echo -n "$1" | sed 's/\([0-9A-F]\{2\}\)/\\\\\\x\1/gI' | xargs printf
 	fi
 }
+
+date_for_setting()
+{
+	date -u  "+%Y-%m-%d %H:%M:%S"
+}
