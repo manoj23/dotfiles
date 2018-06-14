@@ -15,7 +15,7 @@ export HISTFILESIZE=
 export HISTSIZE=
 export LD_LIBRARY_PATH=~/lib:~/usr/lib:~/usr/lib64:$LD_LIBRARY_PATH
 export LOCK_DIR="/var/lock/lockdev/"
-export PATH=~/bin/:$PATH
+export PATH=~/.cargo/bin:~/bin/:/usr/sbin:$PATH
 export PKG_CONFIG_PATH=~/lib/pkgconfig:~/usr/lib/pkgconfig:~/usr/lib64/pkgconfig:$PKG_CONFIG_PATH
 export USE_CCACHE=1
 
