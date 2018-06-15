@@ -31,5 +31,5 @@ function! UseSpace(...)
   set expandtab
 endfunction
 
-command! -bang -nargs=1 UseTab call UseTab(<f-args>)
-command! -bang -nargs=1 UseSpace call UseSpace(<f-args>)
+command! -bang -nargs=* UseTab call UseTab(<f-args>)
+command! -bang -nargs=* UseSpace call UseSpace(<f-args>)
