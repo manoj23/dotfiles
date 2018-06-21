@@ -32,7 +32,6 @@ if dein#load_state('~/.config/nvim/plugins')
   \ 'tpope/vim-surround': { 'on_ft': ['c', 'cpp', 'python'] },
   \ 'vim-scripts/DeleteTrailingWhitespace': {},
   \ 'w0rp/ale': { 'on_ft': ['c', 'cpp', 'sh' ] },
-  \ 'xolox/vim-easytags': { 'on_ft': ['c', 'cpp'], 'depends': 'vim-misc' },
   \ 'xolox/vim-misc': { 'name': 'vim-misc', 'on_ft': ['c', 'cpp'] },
   \ 'tweekmonster/deoplete-clang2': { 'on_i': 1, 'on_ft': ['c', 'cpp'] },
   \ 'zchee/deoplete-jedi': { 'on_ft': ['python'] }
