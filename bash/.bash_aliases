@@ -1,6 +1,7 @@
 alias ls='ls --color=auto'
 alias ll='ls'
 alias rm='rm --one-file-system'
+alias hexedit='hexedit --color'
 alias grep='grep --color=auto'
 alias rgrep='grep --color -rn'
 alias diff='colordiff'
