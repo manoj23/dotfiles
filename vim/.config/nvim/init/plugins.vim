@@ -29,7 +29,7 @@ if dein#load_state('~/.config/nvim/plugins')
   \ 'tomasr/molokai': { 'merged': 0 },
   \ 'tomtom/tcomment_vim': { 'on_ft': ['c', 'cpp', 'python', 'sh', 'vim'] },
   \ 'tpope/vim-abolish': {},
-  \ 'tpope/vim-surround': { 'on_ft': ['c', 'cpp', 'python'] },
+  \ 'tpope/vim-surround': { 'on_ft': ['bitbake', 'c', 'cpp', 'python'] },
   \ 'vim-scripts/DeleteTrailingWhitespace': {},
   \ 'w0rp/ale': { 'on_ft': ['c', 'cpp', 'sh' ] },
   \ 'xolox/vim-misc': { 'name': 'vim-misc', 'on_ft': ['c', 'cpp'] },
