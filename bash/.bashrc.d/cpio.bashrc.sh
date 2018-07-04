@@ -1,67 +1,132 @@
-create_cpio_archive()
+__cpio_mk()
 {
-	if [ $# -lt 1 ]; then
+	if [ "$#" -lt 2 ]; then
 		echo "Not enough arguments, Bye!"
-		exit 1
+		return 1
 	fi
 
-	if [ ! -d "$1" ]; then
+	if [ ! -d "$2" ]; then
 		echo "$1 is not folder, Bye!"
-		exit 1
+		return 1
 	fi
 
-	if [ -e "$1.cpio" ]; then
-		echo "$1 already exists, Bye!"
-		exit 1
+	local compression="$1"
+	local cpio_folder="$2"
+	local cpio_file="${2%/}.cpio"
+
+	if [ -e "$cpio_file" ]; then
+		read -N 1 -e -r -p "$cpio_file already exists, do you want to overwrite it? [y/n]" yn
+		
+		if [ "x$yn" != "xy" ]; then
+			echo "OK, Bye!"
+			return 1
+		else
+			rm "$cpio_file"
+		fi
+		
 	fi
 
-	(cd "$1" && find . | cpio -o -H newc > ../"$1".cpio)
+	(cd "$cpio_folder" && find . | cpio -o -H newc > ../"$cpio_file")
+
+	case $compression in
+		gz)
+		gzip -v -9 "$cpio_file"
+		;;
+		_)
+		;;
+	esac
+
+	return 0
 }
 
-create_cpio_gz_archive()
+__cpio_check_directory()
 {
 	if [ $# -lt 1 ]; then
 		echo "Not enough arguments, Bye!"
-		exit 1
+		return 1
 	fi
 
-	if [ ! -d "$1" ]; then
-		echo "$1 is not a folder, Bye!"
-		exit 1
-	fi
+	local cpio_file="$1"
+		
+	if [ -d "$cpio_file" ]; then
+		read -N 1 -e -r -p "$cpio_file directory already exists, do you want to overwrite it? [y/n]" yn
 
-	if [ -e "$1.cpio.gz" ]; then
-		echo "$1 already exists, Bye!"
-		exit 1
+		if [ "x$yn" != "xy" ]; then
+			echo "OK, Bye!"
+			return 1
+		else
+			rm -rf "$cpio_file"
+			mkdir "$cpio_file"
+		fi
+	else
+		mkdir "$cpio_file"
 	fi
-
-	(cd "$1" && find . | cpio -o -H newc | gzip > ../"$1".cpio.gz)
 }
 
-uncompress_cpio_archive()
+cpio_mk()
+{
+	__cpio_mk _ "$1"
+}
+
+cpio_mk_gz()
+{
+	__cpio_mk gz "$1"
+}
+
+cpio_un()
 {
 	if [ $# -lt 1 ]; then
 		echo "Not enough arguments, Bye!"
-		exit 1
+		return 1
 	fi
 
-	if [ -d "$1" ]; then
-		echo "$1 already exists, Bye!"
-		exit 1
+	if [ ! -e "$1" ]; then
+		echo "$1 does not exist, Bye!"
+		return 1
 	fi
 
-	# check if it ends with .cpio
-	FILE=$(basename "$1")
-	EXTENSION=${FILE##*.}
-	# check with file if is a cpio file
-	if [ ! "$EXTENSION" = ".cpio" ]; then
-		echo "$1 does not end with .cpio"
+	local cpio_file
+	local cpio_file_extension
+	local cpio_directory
+
+	cpio_file=$(basename "$1")
+	cpio_file_extension=${cpio_file##*.}
+	cpio_directory=$(echo "$cpio_file" | cut -d '.' -f 1)
+	
+	if [ "$cpio_file_extension" = "gz" ]; then
+		if __cpio_check_directory "$cpio_directory"; then
+			(cd "$cpio_directory" && gunzip "../$cpio_file" -c | sudo cpio -H newc -idv)
+		fi
+	elif [ "$cpio_file_extension" = "cpio" ]; then
+		if __cpio_check_directory "$cpio_directory"; then
+			(cd "$cpio_directory" && cat "../$cpio_file" | sudo cpio -H newc -idv)
+		fi
+	else
+		echo "$cpio_file does not end with .cpio nor .cpio.gz, Bye!"
+		return 1
+	fi
+}
+
+cpio_ls()
+{
+	if [ $# -lt 1 ]; then
+		echo "Not enough arguments, Bye!"
+		return 1
 	fi
 
-	if [ -e "$1.cpio.gz" ]; then
-		echo "$1 already exists, Bye!"
-		exit 1
+	if [ ! -e "$1" ]; then
+		echo "$1 does not exist, Bye!"
+		return 1
 	fi
 
-	(mkdir -v "$1" && cd "$1" && cat ../"$1" | cpio -H newc -idv 2> cpio.log)
+	local cpio_file=$(basename "$1")
+	local cpio_file_extension=${cpio_file##*.}
+	if [ "$cpio_file_extension" = "gz" ]; then
+		gunzip -c "$1" | cpio -itv
+	elif [ "$cpio_file_extension" = "cpio" ]; then
+		cpio -itv < "$cpio_file"
+	else
+		echo "$cpio_file does not end with .cpio nor .cpio.gz, Bye!"
+		return 1
+	fi
 }
