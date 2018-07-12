@@ -19,3 +19,10 @@ if [ ! -d ~/.config/nvim/bundles ]; then
 	sh ./vim/installer.sh ~/.config/nvim/bundles
 	rm vim/installer.sh
 fi
+
+# installl tpm
+if [ ! -d ~/.tmux/plugins/tpm ]; then
+	mkdir -p ~/.tmux/plugins
+	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+	tmux source ~/.tmux.conf
+fi
