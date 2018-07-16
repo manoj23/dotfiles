@@ -12,7 +12,7 @@
 	b = branch
 	d = diff
 	co = checkout
-	l = log --oneline --graph
+	l = log --oneline --graph --decorate
 	ll = log -1 -u
 	sh = show
 	g = grep
