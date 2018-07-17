@@ -1,18 +1,18 @@
 # Copied from https://github.com/junegunn/fzf/wiki/Examples
 
-# fe [FUZZY PATTERN] - Open the selected file with the default editor
+# ff [FUZZY PATTERN] - Open the selected file with the default editor
 #   - Bypass fuzzy finder if there's only one match (--select-1)
 #   - Exit if there's no match (--exit-0)
-fe() {
+ff() {
   local files
   IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
   [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
 }
 
-bind -x '"\C-p": fe'
+bind -x '"\C-p": ff'
 
-# fd - cd to selected directory
-fd() {
+# fe - cd to selected directory
+fe() {
   local dir
   dir=$(find ${1:-.} -path '*/\.*' -prune \
                   -o -type d -print 2> /dev/null | fzf +m) &&
