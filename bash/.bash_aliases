@@ -1,3 +1,4 @@
+alias ag='rg'
 alias ls='ls --color=auto'
 alias ll='ls'
 alias rm='rm --one-file-system'
