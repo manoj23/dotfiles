@@ -11,3 +11,4 @@ My dotfiles managed with GNU stow.
 * vim (nvim)
 * Xresources
 * git
+* tig

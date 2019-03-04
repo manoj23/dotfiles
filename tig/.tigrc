@@ -1,0 +1,3 @@
+set commit-order = default
+set main-options = -n 250
+set show-changes = no
