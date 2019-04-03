@@ -5,6 +5,7 @@ sudo stow bash -t /root/
 stow ckermit
 stow git
 stow i3
+stow radare2
 stow screen
 stow termite
 stow tmux

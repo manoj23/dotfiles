@@ -12,3 +12,4 @@ My dotfiles managed with GNU stow.
 * Xresources
 * git
 * tig
+* radare2
