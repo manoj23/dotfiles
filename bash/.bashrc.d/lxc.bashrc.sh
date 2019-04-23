@@ -5,7 +5,7 @@ lxc_ls()
 
 lxc_get_ip()
 {
-	if [ ! -z "$1" ]; then
+	if [ -n "$1" ]; then
 		sudo lxc-ls -f "$1" -F IPV4
 	fi
 }
