@@ -1,3 +1,17 @@
+lxc_start()
+{
+	if [ -n "$1" ]; then
+		sudo lxc-start -n "$1"
+	fi
+}
+
+lxc_stop()
+{
+	if [ -n "$1" ]; then
+		sudo lxc-stop -n "$1"
+	fi
+}
+
 lxc_ls()
 {
 	sudo lxc-ls
