@@ -36,3 +36,12 @@ android_mk_raw()
 
 	simg2img "$img_file" "$raw_file"
 }
+
+android_sync()
+{
+	if [ -z $ANDROID_PRODUCT_OUT ]; then
+		export ANDROID_PRODUCT_OUT=$PWD
+	fi
+
+	adb remount && adb sync && adb reboot
+}
