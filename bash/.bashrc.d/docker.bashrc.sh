@@ -1,6 +1,6 @@
 docker_ip()
 {
-	if [ ! -z "$1" ]; then
+	if [ -n "$1" ]; then
 		docker inspect "$1" -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'
 	fi
 }
