@@ -43,5 +43,6 @@ android_sync()
 		export ANDROID_PRODUCT_OUT=$PWD
 	fi
 
-	adb remount && adb sync && adb reboot
+	# update only if there is an update
+	adb remount && (adb sync | cut -d ' ' -f 2 | ag -vq 0) && adb reboot
 }
