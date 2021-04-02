@@ -12,6 +12,15 @@ lxc_stop()
 	fi
 }
 
+lxc_restart()
+{
+	if [ -n "$1" ]; then
+		lxc_stop "$1"
+		lxc_start "$1"
+	fi
+}
+
+
 lxc_ls()
 {
 	sudo lxc-ls
