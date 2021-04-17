@@ -45,3 +45,12 @@ date_for_setting()
 {
 	date -u  "+%Y-%m-%d %H:%M:%S"
 }
+
+# search strings in binaries
+# Example:
+#  Look for string "abc" in binaries that ends in .a
+#    ug .a "abc"
+ug()
+{
+	$(which fd) "$1"$ -tf -x bash -c "if rg -q \"$2\" <(strings {}) ; then echo {}; fi"
+}
