@@ -26,6 +26,7 @@ export USE_CCACHE=1
 
 shopt -s autocd
 shopt -s cdspell
+shopt -s checkwinsize
 shopt -s dirspell
 shopt -s histappend
 
