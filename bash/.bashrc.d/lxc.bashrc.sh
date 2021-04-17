@@ -29,6 +29,6 @@ lxc_ls()
 lxc_get_ip()
 {
 	if [ -n "$1" ]; then
-		sudo lxc-ls -f "$1" -F IPV4
+		sudo lxc-ls -f "$1" -F IPV4 | grep -v IPV4
 	fi
 }
