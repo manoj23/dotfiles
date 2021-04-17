@@ -32,3 +32,21 @@ openssl_x509_gen_crt() {
 
 	openssl req -batch -new -x509 -key "${keyname}.pem" -out "${keyname}.crt"
 }
+
+openssl_rsa_pubkey_der_to_pem()
+{
+	if [ "$#" -ne 2 ]; then
+		echo "Not enough argument, Bye!"
+		return 1
+	fi
+
+	local pubkey_der=$1
+	local pubkey_pem=$2
+
+	if [ ! -f "${pubkey_der}" ]; then
+		echo "${pubkey_der} not found, Bye!"
+		return 2
+	fi
+
+	openssl rsa -in "$pubkey_der" -inform der  -pubin -outform pem -out "$pubkey_pem"
+}
