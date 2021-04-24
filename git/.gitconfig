@@ -28,3 +28,6 @@
 
 [include]
 	path = ~/.gitconfig.specific
+
+[merge]
+	tool = meld
