@@ -48,3 +48,9 @@ fi
 
 # shellcheck source=/dev/null
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+update_title()
+{
+	echo -en "\e]0;$PWD\a"
+}
+trap update_title DEBUG
