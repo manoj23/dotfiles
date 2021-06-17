@@ -7,3 +7,8 @@ repo()
 		$(which repo) $@
 	fi
 }
+
+repo_sync()
+{
+	repo sync -j16 -qc
+}
