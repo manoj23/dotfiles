@@ -32,6 +32,7 @@ if dein#load_state('~/.config/nvim/plugins')
   \ 'tpope/vim-abolish': {},
   \ 'tpope/vim-surround': { 'on_ft': ['bitbake', 'c', 'cpp', 'sh', 'python'] },
   \ 'tpope/vim-obsession': { 'on_ft': ['bitbake', 'c', 'cpp', 'java', 'sh', 'python'] },
+  \ 'udalov/kotlin-vim': { 'on_ft': ['kotlin'] },
   \ 'vim-scripts/DeleteTrailingWhitespace': {},
   \ 'w0rp/ale': { 'on_ft': ['c', 'cpp', 'sh' ] },
   \ 'xolox/vim-misc': { 'name': 'vim-misc', 'on_ft': ['c', 'cpp'] },
