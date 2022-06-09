@@ -6,7 +6,6 @@ if dein#load_state('~/.config/nvim/plugins')
   call dein#add('~/.config/nvim/bundles/repos/github.com/Shougo/dein.vim')
 
   call dein#load_dict({
-  \ 'Shougo/deoplete.nvim': { 'on_i': 1, 'on_ft': ['c', 'cpp'] },
   \ 'Shougo/echodoc.vim': { 'on_i': 1, 'on_ft': ['c', 'cpp'] },
   \ 'SirVer/ultisnips': { 'name': 'ultisnips', 'on_i': 1, 'on_ft': ['c', 'cpp', 'python', 'sh' ] },
   \ 'arakashic/chromatica.nvim': { 'on_ft': ['c', 'cpp'] },
@@ -36,8 +35,6 @@ if dein#load_state('~/.config/nvim/plugins')
   \ 'vim-scripts/DeleteTrailingWhitespace': {},
   \ 'w0rp/ale': { 'on_ft': ['c', 'cpp', 'sh' ] },
   \ 'xolox/vim-misc': { 'name': 'vim-misc', 'on_ft': ['c', 'cpp'] },
-  \ 'tweekmonster/deoplete-clang2': { 'on_i': 1, 'on_ft': ['c', 'cpp'] },
-  \ 'zchee/deoplete-jedi': { 'on_ft': ['python'] },
   \ 'peterhoeg/vim-qml': { 'on_ft': ['qml'] }
   \ })
 
