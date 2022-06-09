@@ -1,3 +1,7 @@
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
 alias ag='rg'
 alias rg='rg -g \!tags'
 alias ls='ls --color=auto'
