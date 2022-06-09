@@ -8,7 +8,6 @@ if dein#load_state('~/.config/nvim/plugins')
   call dein#load_dict({
   \ 'Shougo/echodoc.vim': { 'on_i': 1, 'on_ft': ['c', 'cpp'] },
   \ 'SirVer/ultisnips': { 'name': 'ultisnips', 'on_i': 1, 'on_ft': ['c', 'cpp', 'python', 'sh' ] },
-  \ 'arakashic/chromatica.nvim': { 'on_ft': ['c', 'cpp'] },
   \ 'bps/vim-textobj-python': { 'depends': 'vim-textobj-user', 'on_ft': ['python'] },
   \ 'easymotion/vim-easymotion': { 'on_ft': ['c', 'cpp'] },
   \ 'haya14busa/incsearch.vim': { 'on_ft': ['c', 'cpp'] },
