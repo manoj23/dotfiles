@@ -35,6 +35,11 @@ for bashrc in ~/.bashrc.d/*; do
 	source "$bashrc"
 done
 
+for bashrc in ~/.bashrc.d.private/*; do
+	# shellcheck source=/dev/null
+	source "$bashrc"
+done
+
 if [[ $(whoami) == "root" ]]; then
 	PS1='\[\e[0;31m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[0;31m\]\$ \[\e[m\]\[\e[0;32m\]'
 else
