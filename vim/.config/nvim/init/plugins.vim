@@ -25,6 +25,7 @@ if dein#load_state('~/.config/nvim/plugins')
   \ 'ms-jpq/coq_nvim': { 'on_ft': ['c', 'cpp', 'sh' ], 'branch': 'coq' },
   \ 'ms-jpq/coq.artifacts': { 'on_ft': ['c', 'cpp', 'sh' ], 'branch': 'artifacts' },
   \ 'ms-jpq/coq.thirdparty': { 'on_ft': ['c', 'cpp', 'sh' ], 'branch': '3p' },
+  \ 'nvim-treesitter/nvim-treesitter': { 'on_ft': ['c', 'cpp'] },
   \ 'rust-lang/rust.vim': { 'on_ft': ['rust'] },
   \ 'sjl/gundo.vim': { 'on_ft': ['c', 'cpp', 'python', 'sh'] },
   \ 'terryma/vim-multiple-cursors': {},
