@@ -13,6 +13,7 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.g
 export HISTCONTROL=erasedups
 export HISTFILESIZE=
 export HISTSIZE=
+export HISTFILE=~/.bash_history_
 export LD_LIBRARY_PATH=~/lib:~/usr/lib:~/usr/lib64:$LD_LIBRARY_PATH
 export LOCK_DIR="/var/lock/lockdev/"
 export PATH=~/.cargo/bin:~/go/bin:~/bin/:/usr/sbin:$PATH
