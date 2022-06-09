@@ -54,3 +54,11 @@ ug()
 {
 	$(which fd) "$1"$ -tf -x bash -c "if rg -q \"$2\" <(strings {}) ; then echo {}; fi"
 }
+
+reboot() {
+	echo "Are you sure you want to reboot?"
+	read -r reply
+	if [ "$reply" = "yes" ]; then
+		sudo "$(command -v reboot)"
+	fi
+}
