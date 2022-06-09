@@ -28,4 +28,9 @@ if [ ! -d ~/.tmux/plugins/tpm ]; then
 	tmux source ~/.tmux.conf
 fi
 
+# install nvm
+if [ ! -d ~/.nvm ]; then
+	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+fi
+
 [ -x private/deploy.sh ] && (cd private && ./deploy.sh)
