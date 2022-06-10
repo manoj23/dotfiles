@@ -1,3 +1,12 @@
+sharkdp_fd()
+{
+	if test -x "$(command -v fd)"; then
+		"$(command -v fd)"  "$@"
+	elif test -x "$(command -v fdfind)"; then
+		"$(command -v fdfind)" "$@"
+	fi
+}
+
 kermit()
 {
 	if [ $# == 1 ]; then
@@ -52,7 +61,7 @@ date_for_setting()
 #    ug .a "abc"
 ug()
 {
-	$(which fd) "$1"$ -tf -x bash -c "if rg -q \"$2\" <(strings {}) ; then echo {}; fi"
+	sharkdp_fd "$1"$ -tf -x bash -c "if rg -q \"$2\" <(strings {}) ; then echo {}; fi"
 }
 
 reboot() {
