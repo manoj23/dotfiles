@@ -4,9 +4,7 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ag='rg'
 alias rg='rg -g \!tags'
-alias ls='ls --color=auto'
 alias ll='ls'
-alias rm='rm --one-file-system'
 alias f='sharkdp_fd'
 alias hexedit='hexedit --color'
 alias grep='grep --color=auto'
@@ -28,3 +26,10 @@ alias kermit2='ckermit -c -y /home/$(whoami)/.kermrc -l /dev/ttyUSB1'
 alias kermit3='ckermit -c -y /home/$(whoami)/.kermrc -l /dev/ttyUSB2'
 alias i3lock='i3lock --color=000000'
 alias sudo='sudo '
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+alias ls='ls -G'
+else
+alias rm='rm --one-file-system'
+alias ls='ls --color=auto'
+fi
