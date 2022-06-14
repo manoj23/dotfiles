@@ -33,3 +33,6 @@ else
 alias rm='rm --one-file-system'
 alias ls='ls --color=auto'
 fi
+
+# shellcheck disable=SC1090
+source "$HOME"/.bash_aliases.private
