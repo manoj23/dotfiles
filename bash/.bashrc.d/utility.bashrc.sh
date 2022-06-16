@@ -2,6 +2,8 @@ sharkdp_fd()
 {
 	if test -x "$(command -v fd)"; then
 		"$(command -v fd)"  "$@"
+	elif test -x "$(which fd)"; then
+		"$(which fd)"  "$@"
 	elif test -x "$(command -v fdfind)"; then
 		"$(command -v fdfind)" "$@"
 	fi
