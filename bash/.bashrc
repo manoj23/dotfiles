@@ -19,6 +19,7 @@ export LOCK_DIR="/var/lock/lockdev/"
 export PATH=~/.cargo/bin:~/go/bin:~/bin/:/usr/sbin:$PATH
 export PKG_CONFIG_PATH=~/lib/pkgconfig:~/usr/lib/pkgconfig:~/usr/lib64/pkgconfig:$PKG_CONFIG_PATH
 export USE_CCACHE=1
+export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}
 
 # shellcheck source=/dev/null
 [[ -s /usr/share/autojump/autojump.bash ]] && . /usr/share/autojump/autojump.bash
@@ -66,3 +67,5 @@ export NVM_DIR="$HOME/.nvm"
 [[ -s "$NVM_DIR/nvm.sh" ]] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # shellcheck source=/dev/null
 [[ -s "$NVM_DIR/bash_completion" ]] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# shellcheck source=/dev/null
+[[ -s "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh" ]] && . "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
