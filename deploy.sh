@@ -1,5 +1,35 @@
 #!/usr/bin/env bash
 
+if ! command -v nix-channel; then
+	echo "Please install nix, Bye!"
+	exit 1
+fi
+
+if ! command -v home-manager; then
+	nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+	nix-channel --update
+	nix-shell '<home-manager>' -A install
+fi
+
+nix-shell -p stow --command "stow nix"
+
+home-manager switch
+
+if ! command -v stow; then
+	echo "Please install stow, Bye!"
+	exit 1
+fi
+
+if ! command -v curl; then
+	echo "Please install curl, Bye!"
+	exit 1
+fi
+
+if ! command -v git; then
+	echo "Please install git, Bye!"
+	exit 1
+fi
+
 stow bash
 sudo stow bash -t /root/
 stow ckermit
@@ -11,7 +41,9 @@ stow termite
 stow tmux
 stow Xresources
 
-xrdb ~/.Xresources
+if command -v xrdb; then
+	xrdb ~/.Xresources
+fi
 
 # install dein
 if [ ! -d ~/.config/nvim/bundles ]; then
