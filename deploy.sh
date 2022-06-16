@@ -31,7 +31,9 @@ if ! command -v git; then
 fi
 
 stow bash
-sudo stow bash -t /root/
+if [ -d /root ]; then
+	sudo stow bash -t /root/
+fi
 stow ckermit
 stow git
 stow i3
