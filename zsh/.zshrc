@@ -22,3 +22,5 @@ RPROMPT='[%F{yellow}%?%f]'
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
