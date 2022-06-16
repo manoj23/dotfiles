@@ -1,3 +1,5 @@
+source ~/.bash_env
+
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
