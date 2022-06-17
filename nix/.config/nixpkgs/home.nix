@@ -31,6 +31,7 @@
     pkgs.fd
     pkgs.fzf
     pkgs.gitFull
+    pkgs.google-java-format
     pkgs.gradle
     pkgs.gzip
     pkgs.hexedit
