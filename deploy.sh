@@ -43,7 +43,7 @@ stow termite
 stow tmux
 stow Xresources
 
-if command -v xrdb; then
+if command -v xrdb && test -n "$DISPLAY"; then
 	xrdb ~/.Xresources
 fi
 
