@@ -54,6 +54,7 @@
     pkgs.ranger
     pkgs.rename
     pkgs.ripgrep
+    pkgs.rpm
     pkgs.shellcheck
     pkgs.stow
     pkgs.tree
