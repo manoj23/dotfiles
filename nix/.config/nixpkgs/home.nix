@@ -32,6 +32,7 @@
     pkgs.fd
     pkgs.fzf
     pkgs.gitFull
+    pkgs.gnutar
     pkgs.google-java-format
     pkgs.gradle
     pkgs.gzip
