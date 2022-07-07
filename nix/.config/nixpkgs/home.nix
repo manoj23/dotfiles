@@ -22,6 +22,7 @@
     pkgs.android-tools
     pkgs.awscli
     pkgs.buildah
+    pkgs.chrpath
     pkgs.cmake
     pkgs.colordiff
     pkgs.cppcheck
