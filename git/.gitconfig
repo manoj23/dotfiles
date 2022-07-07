@@ -1,5 +1,6 @@
 [core]
 	editor = nvim
+	sshCommand = "/usr/bin/ssh"
 
 [user]
 	name = Georges Savoundararadj
