@@ -19,6 +19,7 @@
   programs.home-manager.enable = true;
 
   home.packages = [
+    pkgs.alacritty
     pkgs.android-tools
     pkgs.awscli
     pkgs.buildah
