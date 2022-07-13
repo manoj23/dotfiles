@@ -22,7 +22,7 @@ PROMPT_USERNAME=${USER:0:1}
 PROMPT_HOSTNAME=${HOSTNAME:0:3}
 
 if [[ $(whoami) == "root" ]]; then
-	PS1='\[\e[0;31m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[0;31m\]\$ \[\e[m\]\[\e[0;32m\]'
+	PS1='\[\e[0;31m\]\u\[\e[0;38;5;22m\]@\[\e[0;38;5;238m\]$PROMPT_HOSTNAME \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1;37m\]'
 else
 	PS1='\[\e[0;38;5;22m\]$PROMPT_USERNAME\[\e[0;38;5;22m\]@\[\e[0;38;5;238m\]$PROMPT_HOSTNAME \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1;37m\]'
 fi
