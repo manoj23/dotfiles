@@ -59,6 +59,7 @@
     pkgs.shellcheck
     pkgs.stow
     pkgs.tmux
+    pkgs.tig
     pkgs.tree
     pkgs.universal-ctags
     pkgs.xxd
