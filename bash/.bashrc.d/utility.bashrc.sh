@@ -16,6 +16,11 @@ kermit()
 	fi
 }
 
+tmux()
+{
+	TERM=screen-256color $(which tmux)
+}
+
 copy_sd()
 {
 	if [ $# != 2 ] || [ ! -b "/dev/$1" ] || [ ! -f "$2" ]; then
