@@ -58,6 +58,7 @@
     pkgs.rpm
     pkgs.shellcheck
     pkgs.stow
+    pkgs.tmux
     pkgs.tree
     pkgs.universal-ctags
     pkgs.xxd
