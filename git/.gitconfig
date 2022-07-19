@@ -30,6 +30,8 @@
 
 [include]
 	path = ~/.gitconfig.specific
+[include]
+	path = ~/.gitconfig.private
 
 [merge]
 	tool = meld
