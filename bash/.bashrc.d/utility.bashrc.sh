@@ -18,7 +18,7 @@ kermit()
 
 tmux()
 {
-	TERM=screen-256color $(which tmux)
+	TERM=screen-256color $(which tmux) "$@"
 }
 
 copy_sd()
