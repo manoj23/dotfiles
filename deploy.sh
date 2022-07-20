@@ -40,6 +40,7 @@ stow i3
 stow radare2
 stow screen
 stow termite
+stow tig
 stow tmux
 stow Xresources
 
