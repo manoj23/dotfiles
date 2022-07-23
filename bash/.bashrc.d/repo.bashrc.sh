@@ -17,5 +17,5 @@ repo_install()
 
 repo_sync()
 {
-	repo sync -j16 -qc
+	repo sync -j16 -qc "$@"
 }
