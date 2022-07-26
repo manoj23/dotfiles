@@ -35,6 +35,7 @@
     pkgs.gitFull
     pkgs.gnutar
     pkgs.google-java-format
+    pkgs.go
     pkgs.gradle
     pkgs.gzip
     pkgs.hexedit
