@@ -20,6 +20,8 @@
 
   home.packages = [
     pkgs.alacritty
+    pkgs.autoconf
+    pkgs.automake
     pkgs.awscli
     pkgs.cmake
     pkgs.colordiff
