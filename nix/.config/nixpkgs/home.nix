@@ -50,6 +50,7 @@
     pkgs.nmap
     pkgs.picocom
     pkgs.pkg-config
+    pkgs.python3
     pkgs.ranger
     pkgs.rename
     pkgs.ripgrep
