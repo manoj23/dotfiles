@@ -46,16 +46,16 @@
     pkgs.neovim
     pkgs.ninja
     pkgs.nmap
-    pkgs.pkg-config
     pkgs.picocom
+    pkgs.pkg-config
     pkgs.ranger
     pkgs.rename
     pkgs.ripgrep
     pkgs.rpm
     pkgs.shellcheck
     pkgs.stow
-    pkgs.tmux
     pkgs.tig
+    pkgs.tmux
     pkgs.tree
     pkgs.universal-ctags
     pkgs.xxd
