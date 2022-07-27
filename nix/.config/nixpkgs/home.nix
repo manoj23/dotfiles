@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the
@@ -20,10 +20,7 @@
 
   home.packages = [
     pkgs.alacritty
-    pkgs.android-tools
     pkgs.awscli
-    pkgs.buildah
-    pkgs.chrpath
     pkgs.cmake
     pkgs.colordiff
     pkgs.cppcheck
@@ -51,8 +48,6 @@
     pkgs.nmap
     pkgs.pkg-config
     pkgs.picocom
-    pkgs.podman
-    pkgs.radare2
     pkgs.ranger
     pkgs.rename
     pkgs.ripgrep
@@ -65,5 +60,11 @@
     pkgs.universal-ctags
     pkgs.xxd
     pkgs.zip
+  ] ++ lib.optionals pkgs.stdenv.isLinux [
+    pkgs.android-tools
+    pkgs.buildah
+    pkgs.chrpath
+    pkgs.podman
+    pkgs.radare2
   ];
 }
