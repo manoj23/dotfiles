@@ -29,6 +29,7 @@
     pkgs.curl
     pkgs.diffutils
     pkgs.dos2unix
+    pkgs.evince
     pkgs.fd
     pkgs.fzf
     pkgs.gitFull
