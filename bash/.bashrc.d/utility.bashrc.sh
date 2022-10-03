@@ -78,3 +78,28 @@ reboot() {
 		sudo "$(command -v reboot)"
 	fi
 }
+
+webcam_grab()
+{
+	VIDEO=/dev/video0
+
+	if [ "$#" -eq 1 ]; then
+		VIDEO=$1
+	fi
+
+	ffplay -f video4linux2 -framerate 50 -video_size 1920x1080 -input_format mjpeg "$VIDEO"
+}
+
+webcam_shot()
+{
+	VIDEO=/dev/video0
+	FILE=$(mktemp -p . picture_XXX.jpeg)
+
+	if [ "$#" -eq 1 ]; then
+		VIDEO=$1
+	fi
+
+	ffmpeg -y -f video4linux2 -i "$VIDEO" -vframes 1  -video_size 640x480 "$FILE"
+
+	echo "$FILE written"
+}
