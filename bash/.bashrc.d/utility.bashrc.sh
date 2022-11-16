@@ -103,3 +103,11 @@ webcam_shot()
 
 	echo "$FILE written"
 }
+
+t() {
+	if [ ${0#"-"} == "bash" ]; then
+		type $1
+	elif [ ${0#"-"} == "zsh" ]; then
+		whence -f $1
+	fi
+}
