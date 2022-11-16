@@ -1,10 +1,18 @@
 repo()
 {
+	if command -v python3 > /dev/null 2>&1; then
+		PYTHON=python3
+	elif command -v python > /dev/null 2>&1; then
+		PYTHON=python
+	else
+		PYTHON=
+	fi
+
 	local LOCAL_REPO="$PWD/.repo/repo/repo"
 	if [ -x $LOCAL_REPO ]; then
-		$LOCAL_REPO $@
+		$PYTHON $LOCAL_REPO $@
 	else
-		$(which repo) $@
+		$PYTHON $(which repo) $@
 	fi
 }
 
