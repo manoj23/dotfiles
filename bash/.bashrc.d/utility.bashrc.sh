@@ -105,9 +105,13 @@ webcam_shot()
 }
 
 t() {
-	if [ ${0#"-"} == "bash" ]; then
-		type $1
-	elif [ ${0#"-"} == "zsh" ]; then
-		whence -f $1
+	if [ -n "$ZSH_NAME" ]; then
+		whence -f "$1"
+	else
+		SH="${0#"-"}"
+		SH="$(basename "$SH")"
+		if [ "$SH" = "bash" ]; then
+			type "$1"
+		fi
 	fi
 }
