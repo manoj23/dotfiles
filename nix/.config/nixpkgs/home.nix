@@ -30,7 +30,10 @@
     pkgs.diffutils
     pkgs.dos2unix
     pkgs.evince
+    pkgs.eog
+    pkgs.shotwell
     pkgs.fd
+    pkgs.feh
     pkgs.fzf
     pkgs.gitFull
     pkgs.gnutar
