@@ -38,6 +38,8 @@ stow bash
 if [ -d /root ]; then
 	sudo stow bash -t /root/
 fi
+
+stow bash
 stow ckermit
 stow git
 stow i3
@@ -47,6 +49,7 @@ stow termite
 stow tig
 stow tmux
 stow Xresources
+stow zsh
 
 if command -v xrdb && test -n "$DISPLAY"; then
 	xrdb ~/.Xresources
