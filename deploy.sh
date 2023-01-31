@@ -57,10 +57,11 @@ fi
 
 # install dein
 if [ ! -d ~/.config/nvim/bundles ]; then
-	curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > vim/installer.sh
+	curl https://raw.githubusercontent.com/Shougo/dein-installer.vim/master/installer.sh -O
+	chmod +x installer.sh
+	./installer.sh
 	mkdir -p ~/.config/nvim/bundles/
-	sh ./vim/installer.sh ~/.config/nvim/bundles
-	rm vim/installer.sh
+	rm installer.sh
 fi
 
 # installl tpm
