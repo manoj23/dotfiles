@@ -11,6 +11,10 @@ if ! command -v home-manager; then
 	nix-shell '<home-manager>' -A install
 fi
 
+if [ -f ~/.config/nixpkgs/home.nix ]; then
+	mv ~/.config/nixpkgs/home.nix{,.bak}
+fi
+
 nix-shell -p stow --command "stow nix"
 
 home-manager switch
