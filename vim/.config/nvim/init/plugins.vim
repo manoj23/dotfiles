@@ -1,13 +1,15 @@
-set runtimepath+=~/.config/nvim/bundles/repos/github.com/Shougo/dein.vim
+let s:dein_base = '~/.cache/dein'
+let s:dein_src = '~/.cache/dein/repos/github.com/Shougo/dein.vim'
+execute 'set runtimepath+=' . s:dein_src
 
 let ft1 = ['c', 'cpp']
 let ft2 = ft1 + ['python', 'sh', 'java']
 let ft3 = ft2 + ['rust', 'vim', 'bitbake']
 
-if dein#load_state('~/.config/nvim/plugins')
-  call dein#begin('~/.config/nvim/plugins')
+if dein#load_state(s:dein_base)
+  call dein#begin(s:dein_base)
 
-  call dein#add('~/.config/nvim/bundles/repos/github.com/Shougo/dein.vim')
+  call dein#add(s:dein_src)
 
   call dein#load_dict({
   \ 'Shougo/echodoc.vim': { 'on_i': 1, 'on_ft': ft1 },
