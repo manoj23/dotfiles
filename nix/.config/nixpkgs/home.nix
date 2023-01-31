@@ -30,9 +30,6 @@
     pkgs.curl
     pkgs.diffutils
     pkgs.dos2unix
-    pkgs.evince
-    pkgs.eog
-    pkgs.shotwell
     pkgs.fd
     pkgs.feh
     pkgs.fzf
@@ -59,7 +56,6 @@
     pkgs.ranger
     pkgs.rename
     pkgs.ripgrep
-    pkgs.rpm
     pkgs.shellcheck
     pkgs.stow
     pkgs.tig
@@ -72,7 +68,11 @@
     pkgs.android-tools
     pkgs.buildah
     pkgs.chrpath
+    pkgs.eog
+    pkgs.evince
     pkgs.podman
     pkgs.radare2
+    pkgs.rpm
+    pkgs.shotwell
   ];
 }
