@@ -115,3 +115,13 @@ t() {
 		fi
 	fi
 }
+
+lsusb()
+{
+	# shellcheck disable=SC3010,SC3028
+	if [[ "$OSTYPE" == "darwin"* ]]; then
+		system_profiler SPUSBDataType
+	else
+		eval "$(which lsusb)"
+	fi
+}
