@@ -42,6 +42,7 @@
     pkgs.gradle
     pkgs.gzip
     pkgs.hexedit
+    pkgs.highlight
     pkgs.htop
     pkgs.jq
     pkgs.lftp
