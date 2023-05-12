@@ -26,3 +26,22 @@ endsnippet
 snippet pr_ "pr_info debug" b
 pr_info("%s: %d: ${VISUAL}$0\n", __func__, __LINE__);
 endsnippet
+
+snippet hexdump "hexdump debug" b
+#include <stdint.h>
+#include <stdio.h>
+
+static void hexdump(uint8_t *const array, int len)
+{
+       char buf[100] = {0};
+       int buf_idx = 0;
+
+       for (int idx = 0; idx < len; idx++) {
+               buf_idx += snprintf(buf + buf_idx, sizeof buf - buf_idx,  "%2x ", array[idx]);
+               if (idx != 0 && (idx % 16)== 0) {
+                       printf("%s\n", buf);
+                       buf_idx = 0;
+               }
+       }
+}
+endsnippet
