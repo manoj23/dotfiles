@@ -2,8 +2,8 @@ sharkdp_fd()
 {
 	if test -x "$(command -v fd)"; then
 		"$(command -v fd)"  "$@"
-	elif test -x "$(which fd)"; then
-		"$(which fd)"  "$@"
+	elif test -x "$(__which fd)"; then
+		"$(__which fd)"  "$@"
 	elif test -x "$(command -v fdfind)"; then
 		"$(command -v fdfind)" "$@"
 	fi
@@ -18,7 +18,7 @@ kermit()
 
 tmux()
 {
-	TERM=screen-256color $(which tmux) "$@"
+	TERM=screen-256color $(__which tmux) "$@"
 }
 
 copy_sd()
@@ -122,6 +122,6 @@ lsusb()
 	if [[ "$OSTYPE" == "darwin"* ]]; then
 		system_profiler SPUSBDataType
 	else
-		eval "$(which lsusb)"
+		eval "$(__which lsusb)"
 	fi
 }

@@ -17,6 +17,14 @@ export GO_PROXY=direct
 # shellcheck source=/dev/null
 [[ -s  ~/.bash_aliases ]] && . ~/.bash_aliases
 
+__which() {
+	if [ -n "$ZSH_NAME" ]; then
+		whence -p "$@"
+	else
+		which "$@"
+	fi
+}
+
 for bashrc in ~/.bashrc.d/*; do
 	# shellcheck source=/dev/null
 	source "$bashrc"

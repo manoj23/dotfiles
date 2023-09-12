@@ -12,7 +12,7 @@ repo()
 	if [ -x $LOCAL_REPO ]; then
 		$PYTHON $LOCAL_REPO $@
 	else
-		$PYTHON $(which repo) $@
+		$PYTHON $(__which repo) $@
 	fi
 }
 
