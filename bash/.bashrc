@@ -35,6 +35,9 @@ fi
 # shellcheck source=/dev/null
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+# shellcheck source=/dev/null
+[ -r "/etc/bashrc_$TERM_PROGRAM" ] && source "/etc/bashrc_$TERM_PROGRAM"
+
 update_title()
 {
 	echo -en "\e]0;$PWD\a"
