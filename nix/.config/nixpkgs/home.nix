@@ -61,6 +61,7 @@
     pkgs.ripgrep
     pkgs.shellcheck
     pkgs.stow
+    pkgs.wget
     pkgs.tig
     pkgs.tmux
     pkgs.tree
