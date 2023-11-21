@@ -67,6 +67,7 @@
     pkgs.tree
     pkgs.universal-ctags
     pkgs.xxd
+    pkgs.xz
     pkgs.zip
   ] ++ lib.optionals pkgs.stdenv.isLinux [
     pkgs.android-tools
