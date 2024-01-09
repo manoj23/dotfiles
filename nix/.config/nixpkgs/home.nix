@@ -56,6 +56,7 @@
     pkgs.picocom
     pkgs.pkg-config
     pkgs.python3
+    pkgs.radare2
     pkgs.ranger
     pkgs.rename
     pkgs.ripgrep
@@ -76,7 +77,6 @@
     pkgs.eog
     pkgs.evince
     pkgs.podman
-    pkgs.radare2
     pkgs.rpm
     pkgs.shotwell
   ];
