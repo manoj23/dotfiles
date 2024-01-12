@@ -60,6 +60,7 @@
     pkgs.ranger
     pkgs.rename
     pkgs.ripgrep
+    pkgs.rustup
     pkgs.shellcheck
     pkgs.stow
     pkgs.wget
