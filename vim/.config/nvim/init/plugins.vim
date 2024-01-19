@@ -2,9 +2,9 @@ let s:dein_base = '~/.cache/dein'
 let s:dein_src = '~/.cache/dein/repos/github.com/Shougo/dein.vim'
 execute 'set runtimepath+=' . s:dein_src
 
-let ft1 = ['c', 'cpp']
+let ft1 = ['c', 'cpp', 'rust']
 let ft2 = ft1 + ['python', 'sh', 'java']
-let ft3 = ft2 + ['rust', 'vim', 'bitbake']
+let ft3 = ft2 + [ 'vim', 'bitbake']
 
 if dein#load_state(s:dein_base)
   call dein#begin(s:dein_base)
