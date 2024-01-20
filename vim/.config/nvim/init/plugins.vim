@@ -32,7 +32,7 @@ if dein#load_state(s:dein_base)
   \ 'ms-jpq/coq.artifacts': { 'on_ft': ft2, 'branch': 'artifacts' },
   \ 'ms-jpq/coq.thirdparty': { 'on_ft': ft2, 'branch': '3p' },
   \ 'nvim-treesitter/nvim-treesitter': { 'on_ft': ft2 },
-  \ 'neovim/nvim-lspconfig': { 'on_ft': ft2 },
+  \ 'neovim/nvim-lspconfig': { },
   \ 'rust-lang/rust.vim': { 'on_ft': ['rust'] },
   \ 'sjl/gundo.vim': { 'on_ft': ft2 },
   \ 'terryma/vim-multiple-cursors': {},
