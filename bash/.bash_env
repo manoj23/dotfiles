@@ -7,11 +7,13 @@ export HISTSIZE=
 export HISTFILE=~/.bash_history_
 export LD_LIBRARY_PATH=~/lib:~/usr/lib:~/usr/lib64:$LD_LIBRARY_PATH
 export LOCK_DIR="/var/lock/lockdev/"
-export PATH=~/.cargo/bin:~/go/bin:~/bin/:/usr/sbin:$PATH
+export PATH="$HOME:~/.cargo/bin:$PATH"
+export PATH="$HOME/go/bin:~/bin/:$PATH"
+export PATH="$HOME/usr/sbin:$PATH"
+export PATH="/usr/local/bin:$PATH"
 export PKG_CONFIG_PATH=~/lib/pkgconfig:~/usr/lib/pkgconfig:~/usr/lib64/pkgconfig:/usr/lib64/pkgconfig:$PKG_CONFIG_PATH
 export USE_CCACHE=1
 export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}
-export PATH=$HOME/.toolbox/bin:/usr/local/bin:$PATH
 export GO_PROXY=direct
 
 # shellcheck source=/dev/null
