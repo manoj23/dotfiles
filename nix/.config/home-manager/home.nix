@@ -33,6 +33,7 @@
     pkgs.autoconf
     pkgs.automake
     pkgs.awscli
+    pkgs.ccls
     pkgs.cmake
     pkgs.colordiff
     pkgs.cppcheck
