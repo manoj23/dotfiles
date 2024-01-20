@@ -71,6 +71,7 @@
     pkgs.xxd
     pkgs.xz
     pkgs.zip
+    pkgs.zstd
   ] ++ lib.optionals pkgs.stdenv.isLinux [
     pkgs.android-tools
     pkgs.buildah
