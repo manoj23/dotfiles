@@ -21,6 +21,13 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  programs.neovim = {
+    enable = true;
+    extraPython3Packages = pyPkgs: with pyPkgs; [
+      pip
+    ];
+  };
+
   home.packages = [
     pkgs.alacritty
     pkgs.autoconf
@@ -50,7 +57,6 @@
     pkgs.meld
     pkgs.meson
     pkgs.minicom
-    pkgs.neovim
     pkgs.ninja
     pkgs.nmap
     pkgs.picocom
