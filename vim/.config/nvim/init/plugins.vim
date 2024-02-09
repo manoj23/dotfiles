@@ -43,7 +43,7 @@ if dein#load_state(s:dein_base)
   \ 'tpope/vim-obsession': { 'on_ft': ft3 },
   \ 'udalov/kotlin-vim': { 'on_ft': ['kotlin'] },
   \ 'vim-scripts/DeleteTrailingWhitespace': {},
-  \ 'dense-analysis/ale': { 'on_ft': ft2 },
+  \ 'dense-analysis/ale': { 'on_ft': ft3 },
   \ 'xolox/vim-misc': { 'name': 'vim-misc', 'on_ft': ft1 },
   \ 'peterhoeg/vim-qml': { 'on_ft': ['qml'] }
   \ })
