@@ -29,6 +29,7 @@ alias sudo='sudo '
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
 alias ls='ls -G'
+alias md5sum='md5'
 else
 alias rm='rm --one-file-system'
 alias ls='ls --color=auto'
