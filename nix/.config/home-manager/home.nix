@@ -33,6 +33,7 @@
     pkgs.autoconf
     pkgs.automake
     pkgs.awscli
+    pkgs.bat
     pkgs.ccls
     pkgs.cmake
     pkgs.colordiff
