@@ -44,6 +44,7 @@
     pkgs.fd
     pkgs.feh
     pkgs.fzf
+    pkgs.gawk
     pkgs.gitFull
     pkgs.gnutar
     pkgs.google-java-format
