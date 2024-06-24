@@ -38,4 +38,4 @@ alias ls='ls --color=auto'
 fi
 
 # shellcheck disable=SC1090
-source "$HOME"/.bash_aliases.private
+[[ -s "$HOME"/.bash_aliases.private ]] && source "$HOME"/.bash_aliases.private
