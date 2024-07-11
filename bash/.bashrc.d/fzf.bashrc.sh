@@ -1,11 +1,15 @@
 # Copied from https://github.com/junegunn/fzf/wiki/Examples
 
-if [ "$0" != "bash" ]; then
-	return
+if [ "$0" = "bash" ]; then
+	bind -x '"\C-p": ff'
+	bind -x '"\C-b": fco'
 fi
 
-bind -x '"\C-p": ff'
-bind -x '"\C-b": fco'
+if [ "$0" = "zsh" ]; then
+	bindkey -s '^p\n' 'zle ff'
+	bindkey -s '^b\n' 'zle fco'
+fi
+
 
 # ff [FUZZY PATTERN] - Open the selected file with the default editor
 #   - Bypass fuzzy finder if there's only one match (--select-1)
