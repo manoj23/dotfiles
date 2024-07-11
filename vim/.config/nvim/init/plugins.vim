@@ -31,7 +31,7 @@ if dein#load_state(s:dein_base)
   \ 'ms-jpq/coq_nvim': { 'on_ft': ft2, 'branch': 'coq' },
   \ 'ms-jpq/coq.artifacts': { 'on_ft': ft2, 'branch': 'artifacts' },
   \ 'ms-jpq/coq.thirdparty': { 'on_ft': ft2, 'branch': '3p' },
-  \ 'nvim-treesitter/nvim-treesitter': { 'on_ft': ft2 },
+  \ 'nvim-treesitter/nvim-treesitter': { 'on_ft': ft3, 'hook_post_update': 'TSUpdate' },
   \ 'neovim/nvim-lspconfig': { },
   \ 'rust-lang/rust.vim': { 'on_ft': ['rust'] },
   \ 'sjl/gundo.vim': { 'on_ft': ft2 },
