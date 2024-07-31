@@ -56,6 +56,7 @@
     pkgs.htop
     pkgs.jq
     pkgs.lftp
+    pkgs.kitty
     pkgs.maven
     pkgs.meld
     pkgs.meson
