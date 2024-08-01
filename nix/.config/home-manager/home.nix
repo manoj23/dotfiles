@@ -18,6 +18,11 @@
   # changes in each release.
   home.stateVersion = "23.11";
 
+  nix = {
+    package = pkgs.nix;
+    settings.experimental-features = [ "nix-command" "flakes" ];
+  };
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
