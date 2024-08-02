@@ -5,6 +5,7 @@ alias .....="cd ../../../.."
 alias ag='rg'
 alias cat='bat'
 alias rg='rg -g \!tags'
+alias ls='eza'
 alias ll='ls'
 alias f='sharkdp_fd'
 alias hexedit='hexedit --color'

@@ -46,6 +46,7 @@
     pkgs.curl
     pkgs.diffutils
     pkgs.dos2unix
+    pkgs.eza
     pkgs.fd
     pkgs.feh
     pkgs.fzf
