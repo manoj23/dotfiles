@@ -3,6 +3,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ag='rg'
+alias cat='bat'
 alias rg='rg -g \!tags'
 alias ll='ls'
 alias f='sharkdp_fd'

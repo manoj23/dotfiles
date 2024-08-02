@@ -125,3 +125,8 @@ lsusb()
 		eval "$(__which lsusb)"
 	fi
 }
+
+ccat()
+{
+	$(__which cat) "$@"
+}
