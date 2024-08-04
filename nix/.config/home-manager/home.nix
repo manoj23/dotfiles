@@ -1,7 +1,10 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports = [ ./mosh.nix ];
+  imports = [
+    ./nvim.nix
+    ./mosh.nix
+  ];
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
@@ -25,13 +28,6 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  programs.neovim = {
-    enable = true;
-    extraPython3Packages = pyPkgs: with pyPkgs; [
-      pip
-    ];
-  };
 
   home.packages = [
     pkgs.alacritty
