@@ -8,6 +8,7 @@
       lua-language-server
       nerdfonts
       shellcheck
+      shfmt
       stylua
       # Telescope
       ripgrep
