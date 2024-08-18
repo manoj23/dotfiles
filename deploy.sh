@@ -55,15 +55,6 @@ if command -v xrdb && test -n "$DISPLAY"; then
 	xrdb ~/.Xresources
 fi
 
-# install dein
-if [ ! -d ~/.config/nvim/bundles ]; then
-	curl https://raw.githubusercontent.com/Shougo/dein-installer.vim/master/installer.sh -O
-	chmod +x installer.sh
-	./installer.sh
-	mkdir -p ~/.config/nvim/bundles/
-	rm installer.sh
-fi
-
 # installl tpm
 if [ ! -d ~/.tmux/plugins/tpm ]; then
 	mkdir -p ~/.tmux/plugins
