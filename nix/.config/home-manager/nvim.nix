@@ -8,6 +8,7 @@
       lua-language-server
       marksman
       nerdfonts
+      taplo
       shellcheck
       shfmt
       stylua
