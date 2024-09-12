@@ -5,6 +5,7 @@
     enable = true;
     extraPackages = with pkgs; [
       # LazyVim
+      gopls
       lua-language-server
       marksman
       nerdfonts
