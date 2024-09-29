@@ -6,7 +6,12 @@ if ! command -v nix-channel; then
 fi
 
 if ! command -v home-manager; then
-	nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+	# if installing on NixOS
+	if [ -r /etc/nixos/configuration.nix ]; then
+		nix-channel --add https://github.com/nix-community/home-manager/archive/release-24.05.tar.gz home-manager
+	else
+		nix-channel --add https://github.com/nix-community/home-manager/master.tar.gz home-manager
+	fi
 	nix-channel --update
 	nix-shell '<home-manager>' -A install
 fi
