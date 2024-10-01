@@ -48,6 +48,7 @@
     pkgs.fzf
     pkgs.gawk
     pkgs.gitFull
+    pkgs.gnugrep
     pkgs.gnutar
     pkgs.google-java-format
     pkgs.go
