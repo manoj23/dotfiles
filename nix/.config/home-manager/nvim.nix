@@ -13,6 +13,7 @@
       shellcheck
       shfmt
       stylua
+      texlab
       # Telescope
       ripgrep
     ];
