@@ -68,7 +68,9 @@
     pkgs.nmap
     pkgs.picocom
     pkgs.pkg-config
-    pkgs.python3
+    (pkgs.python3.withPackages (ppkgs: [
+      ppkgs.pip
+    ]))
     pkgs.radare2
     pkgs.ranger
     pkgs.rename
