@@ -1,13 +1,13 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
-vim.cmd('iabbr #i #include')
-vim.cmd("iabbr #d #define")
-vim.cmd("iabbr stativ static")
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "c",
   callback = function(args)
-    vim.cmd("iabbrev print prinf")
+    vim.cmd("iabbrev print printf")
+    vim.cmd('iabbrev #i #include')
+    vim.cmd("iabbrev #d #define")
+    vim.cmd("iabbrev stativ static")
   end
 })
 vim.keymap.set("c", "w!!", "w !sudo tee > /dev/null %", { noremap = true })
