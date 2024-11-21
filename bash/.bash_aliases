@@ -31,11 +31,9 @@ alias i3lock='i3lock --color=000000'
 alias sudo='sudo '
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-alias ls='ls -G'
 alias md5sum='md5'
 else
 alias rm='rm --one-file-system'
-alias ls='ls --color=auto'
 fi
 
 # shellcheck disable=SC1090
