@@ -5,6 +5,7 @@
     enable = true;
     extraPackages = with pkgs; [
       # LazyVim
+      cppcheck
       gopls
       lua-language-server
       marksman
