@@ -57,6 +57,8 @@ return {
         "nix",
         "python",
         "query",
+        "rust",
+        "ron",
         "regex",
         "tsx",
         "typescript",
