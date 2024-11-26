@@ -43,6 +43,11 @@ return {
     opts = {
       ensure_installed = {
         "bash",
+        "git_config",
+        "gitcommit",
+        "git_rebase",
+        "gitignore",
+        "gitattributes",
         "html",
         "javascript",
         "json",
