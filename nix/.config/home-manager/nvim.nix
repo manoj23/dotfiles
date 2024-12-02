@@ -135,6 +135,7 @@
         name = "treesitter-parsers";
         paths = (pkgs.vimPlugins.nvim-treesitter.withPlugins (plugins: with plugins; [
           c
+          cpp
           lua
         ])).dependencies;
       };
