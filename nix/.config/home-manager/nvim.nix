@@ -137,6 +137,7 @@
           c
           cpp
           lua
+          rust
         ])).dependencies;
       };
     in
