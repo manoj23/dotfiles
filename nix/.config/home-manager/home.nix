@@ -98,5 +98,6 @@
     pkgs.podman
     pkgs.rpm
     pkgs.shotwell
+    pkgs.xclip
   ];
 }
