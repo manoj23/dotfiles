@@ -96,6 +96,7 @@
     pkgs.eog
     pkgs.evince
     pkgs.keepassxc
+    pkgs.libmtp
     pkgs.podman
     pkgs.rpm
     pkgs.shotwell
