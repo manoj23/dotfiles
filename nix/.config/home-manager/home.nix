@@ -95,6 +95,7 @@
     pkgs.chrpath
     pkgs.eog
     pkgs.evince
+    pkgs.keepassxc
     pkgs.podman
     pkgs.rpm
     pkgs.shotwell
