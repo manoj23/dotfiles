@@ -84,6 +84,7 @@
     pkgs.tmux
     pkgs.tree
     pkgs.universal-ctags
+    pkgs.unzip
     pkgs.xxd
     pkgs.xz
     pkgs.zip
