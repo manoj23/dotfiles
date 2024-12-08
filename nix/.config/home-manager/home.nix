@@ -45,6 +45,7 @@
     pkgs.eza
     pkgs.fd
     pkgs.feh
+    pkgs.file
     pkgs.fzf
     pkgs.gawk
     pkgs.gitFull
