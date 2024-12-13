@@ -101,5 +101,7 @@
     pkgs.rpm
     pkgs.shotwell
     pkgs.xclip
+  ] ++ lib.optionals pkgs.stdenv.isDarwin [
+    pkgs.reattach-to-user-namespace
   ];
 }
