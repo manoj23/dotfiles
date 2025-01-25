@@ -10,6 +10,7 @@
       lua-language-server
       marksman
       nerdfonts
+      neocmakelsp
       taplo
       shellcheck
       shfmt
@@ -105,6 +106,7 @@
             { "williamboman/mason-lspconfig.nvim", enabled = false },
             { "williamboman/mason.nvim", enabled = false },
 
+            { import = "lazyvim.plugins.extras.lang.cmake" },
             { import = "lazyvim.plugins.extras.lang.docker" },
             { import = "lazyvim.plugins.extras.lang.json" },
             { import = "lazyvim.plugins.extras.lang.markdown" },
@@ -135,6 +137,7 @@
         name = "treesitter-parsers";
         paths = (pkgs.vimPlugins.nvim-treesitter.withPlugins (plugins: with plugins; [
           c
+          cmake
           cpp
           lua
           rust
