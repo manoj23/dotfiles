@@ -46,6 +46,7 @@
     pkgs.fd
     pkgs.feh
     pkgs.file
+    pkgs.findutils
     pkgs.fzf
     pkgs.gawk
     pkgs.gitFull
