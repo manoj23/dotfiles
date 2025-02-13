@@ -11,6 +11,7 @@
       marksman
       nerdfonts
       neocmakelsp
+      pyright
       taplo
       shellcheck
       shfmt
