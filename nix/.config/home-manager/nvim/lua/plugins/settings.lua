@@ -43,6 +43,7 @@ return {
     opts = {
       ensure_installed = {
         "bash",
+        "cmake",
         "git_config",
         "gitcommit",
         "git_rebase",
