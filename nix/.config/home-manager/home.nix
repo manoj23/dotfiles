@@ -84,6 +84,12 @@
     pkgs.wget
     pkgs.tig
     pkgs.tmux
+    (pkgs.toybox.override {
+      enableMinimal = true;
+      extraConfig = ''
+        CONFIG_TIMEOUT=y
+      '';
+    })
     pkgs.tree
     pkgs.universal-ctags
     pkgs.unzip
