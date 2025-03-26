@@ -88,6 +88,7 @@
       enableMinimal = true;
       extraConfig = ''
         CONFIG_TIMEOUT=y
+        CONFIG_WATCH=y
       '';
     })
     pkgs.tree
