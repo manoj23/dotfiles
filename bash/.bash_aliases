@@ -5,6 +5,7 @@ alias .....="cd ../../../.."
 alias ag='rg'
 alias cat='bat'
 alias rg='rg --color=always -g \!tags'
+alias less='less -R'
 alias ls='eza'
 alias ll='ls'
 alias f='sharkdp_fd'
