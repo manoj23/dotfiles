@@ -1,4 +1,4 @@
 xvvf()
 {
-	tar -xvvf "$@"	
+	pbzip2 -dc "$@" | tar x
 }
