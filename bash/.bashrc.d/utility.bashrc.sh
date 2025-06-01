@@ -16,6 +16,10 @@ kermit()
 	fi
 }
 
+chksumfd () {
+	find $1 -type f -print0 | LC_ALL=C sort -z | xargs -0 sha256sum | sha256sum
+}
+
 copy_sd()
 {
 	if [ $# != 2 ] || [ ! -b "/dev/$1" ] || [ ! -f "$2" ]; then
