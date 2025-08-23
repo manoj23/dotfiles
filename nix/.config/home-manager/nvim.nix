@@ -1,151 +1,210 @@
-# copied from https://github.com/LazyVim/LazyVim/discussions/1972
 { pkgs, lib, ... }:
+let
+nixvim = import (builtins.fetchGit {
+    url = "https://github.com/nix-community/nixvim";
+    ref = "nixos-25.05";
+    });
+in
 {
-  programs.neovim = {
+  imports = [
+    nixvim.homeModules.nixvim
+  ];
+
+  programs.nixvim = {
     enable = true;
+
     extraPackages = with pkgs; [
-      # LazyVim
       cppcheck
+      cpplint
+      fzf
       gopls
       lua-language-server
       marksman
-      nerdfonts
       neocmakelsp
       pyright
       taplo
       shellcheck
+      shellharden
       shfmt
       stylua
       texlab
-      # Telescope
       ripgrep
     ];
-    plugins = with pkgs.vimPlugins; [
-      lazy-nvim
-    ];
-    extraPython3Packages = pyPkgs: with pyPkgs; [
-      pip
-    ];
-    extraLuaConfig =
-      let
-        plugins = with pkgs.vimPlugins; [
-          # LazyVim
-          LazyVim
-          bufferline-nvim
-          cmp-buffer
-          cmp-nvim-lsp
-          cmp-path
-          cmp_luasnip
-          conform-nvim
-          dashboard-nvim
-          dressing-nvim
-          flash-nvim
-          friendly-snippets
-          gitsigns-nvim
-          indent-blankline-nvim
-          lualine-nvim
-          neo-tree-nvim
-          neoconf-nvim
-          neodev-nvim
-          noice-nvim
-          nui-nvim
-          nvim-cmp
-          nvim-lint
-          nvim-lspconfig
-          nvim-notify
-          nvim-spectre
-          nvim-treesitter
-          nvim-treesitter-context
-          nvim-treesitter-textobjects
-          nvim-ts-autotag
-          nvim-ts-context-commentstring
-          nvim-web-devicons
-          persistence-nvim
-          plenary-nvim
-          telescope-fzf-native-nvim
-          telescope-nvim
-          todo-comments-nvim
-          tokyonight-nvim
-          trouble-nvim
-          vim-illuminate
-          vim-startuptime
-          which-key-nvim
-          { name = "LuaSnip"; path = luasnip; }
-          { name = "catppuccin"; path = catppuccin-nvim; }
-          { name = "mini.ai"; path = mini-nvim; }
-          { name = "mini.bufremove"; path = mini-nvim; }
-          { name = "mini.comment"; path = mini-nvim; }
-          { name = "mini.indentscope"; path = mini-nvim; }
-          { name = "mini.pairs"; path = mini-nvim; }
-          { name = "mini.surround"; path = mini-nvim; }
-        ];
-        mkEntryFromDrv = drv:
-          if lib.isDerivation drv then
-            { name = "${lib.getName drv}"; path = drv; }
-          else
-            drv;
-        lazyPath = pkgs.linkFarm "lazy-plugins" (builtins.map mkEntryFromDrv plugins);
-      in
+
+    extraConfigLua =
       ''
-        require("lazy").setup({
-          defaults = {
-            lazy = true,
-          },
-          dev = {
-            -- reuse files from pkgs.vimPlugins.*
-            path = "${lazyPath}",
-            patterns = { "." },
-            -- fallback to download
-            fallback = true,
-          },
-          spec = {
-            { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-            -- The following configs are needed for fixing lazyvim on nix
-            -- force enable telescope-fzf-native.nvim
-            { "nvim-telescope/telescope-fzf-native.nvim", enabled = true },
-            -- disable mason.nvim, use programs.neovim.extraPackages
-            { "williamboman/mason-lspconfig.nvim", enabled = false },
-            { "williamboman/mason.nvim", enabled = false },
+      vim.g.autoformat = false
+      vim.opt.smarttab = false
+      vim.opt.softtabstop = 0
+      vim.opt.wrap = true
+      vim.opt.ruler = true
+      vim.opt.colorcolumn = "80"
 
-            { import = "lazyvim.plugins.extras.lang.cmake" },
-            { import = "lazyvim.plugins.extras.lang.docker" },
-            { import = "lazyvim.plugins.extras.lang.json" },
-            { import = "lazyvim.plugins.extras.lang.markdown" },
-            { import = "lazyvim.plugins.extras.lang.rust" },
-            { import = "lazyvim.plugins.extras.lang.tex" },
-            { import = "lazyvim.plugins.extras.lang.typescript" },
-            { import = "plugins" },
+      local SetTab = function(args)
+      local tabsize = tonumber(args.args) or 4
+      vim.opt.tabstop = tabsize
+      vim.opt.shiftwidth = tabsize
+      end
+      local UseSpace = function(args)
+      local tabsize = tonumber(args.args) or 4
+      SetTab({ args = tabsize })
+      vim.opt.expandtab = true
+      end
 
-            -- treesitter handled by xdg.configFile."nvim/parser", put this line at the end of spec to clear ensure_installed
-            { "nvim-treesitter/nvim-treesitter", opts = { ensure_installed = {} } },
-          },
-          performance = {
-            rtp = {
-              disabled_plugins = {
-                "tohtml",
-                "tutor",
-              },
-            },
-          },
-        })
+      local UseTab = function(args)
+      local tabsize = tonumber(args.args) or 4
+      SetTab({ args = tabsize })
+      vim.opt.expandtab = false  -- Use tabs instead of spaces
+      end
+
+      vim.api.nvim_create_user_command(
+          "UseTab", UseTab, { nargs = "?" }
+          )
+
+      vim.api.nvim_create_user_command(
+          "UseSpace", UseSpace, { nargs = "?" }
+          )
+
+      vim.api.nvim_create_user_command(
+          "SetTab", SetTab, { nargs = "?" }
+          )
+
+      UseSpace({ args = "4" })
+
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = "c",
+        callback = function(args)
+          vim.cmd("iabbrev print printf")
+          vim.cmd('iabbrev #i #include')
+          vim.cmd("iabbrev #d #define")
+          vim.cmd("iabbrev stativ static")
+        end
+      })
       '';
-  };
 
-  # https://github.com/nvim-treesitter/nvim-treesitter#i-get-query-error-invalid-node-type-at-position
-  xdg.configFile."nvim/parser".source =
-    let
-      parsers = pkgs.symlinkJoin {
-        name = "treesitter-parsers";
-        paths = (pkgs.vimPlugins.nvim-treesitter.withPlugins (plugins: with plugins; [
-          c
-          cmake
-          cpp
-          lua
-          rust
-        ])).dependencies;
+    colorschemes.tokyonight = {
+      enable = true;
+      settings.style = "night";
+    };
+    plugins = {
+      bufferline.enable = true;
+      cmp = {
+        enable = true;
+        autoEnableSources = true;
+        settings.sources = [
+        { name = "nvim_lsp"; }
+        { name = "path"; }
+        { name = "buffer"; }
+        ];
       };
-    in
-    "${parsers}/parser";
+      cmp_luasnip.enable = true;
+      conform-nvim = {
+        enable = true;
+        settings = {
+          formatters_by_ft = {
+            bash = [
+              "shellcheck"
+              "shellharden"
+              "shfmt"
+            ];
+            cpp = [ "clang_format" ];
+            "_" = [
+              "squeeze_blanks"
+                "trim_whitespace"
+                "trim_newlines"
+            ];
+          };
+        };
+      };
+      flash.enable = true;
+      friendly-snippets.enable = true;
+      gitsigns.enable = true;
+      illuminate.enable = true;
+      indent-blankline.enable = true;
+      lint = {
+        enable = true;
+        lintersByFt = {
+          sh = [ "shellcheck" ];
+          cpp = [ "cppcheck" "cpplint" ];
+          c = [ "cppcheck" ];
+        };
+      };
+      lazydev.enable = true;
+      lspconfig.enable = true;
+      lualine.enable = true;
+      luasnip.enable = true;
+      mini.enable = true;
+      neo-tree.enable = true;
+      neoconf.enable = true;
+      snacks.enable = true;
+      persistence.enable = true;
+      telescope = {
+        enable = true;
+        extensions = {
+          fzf-native.enable = true;
+        };
+      };
+      treesitter = {
+        enable = true;
+        grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+          bash
+            cmake
+            git_config
+            gitcommit
+            git_rebase
+            gitignore
+            gitattributes
+            html
+            javascript
+            json
+            lua
+            markdown
+            markdown_inline
+            nix
+            python
+            query
+            rust
+            ron
+            regex
+            tsx
+            typescript
+            vim
+            yaml
+            ];
+      };
+      todo-comments.enable = true;
+      treesitter-context.enable = true;
+      treesitter-textobjects.enable = true;
+      trouble.enable = true;
+      ts-comments.enable = true;
+      ts-context-commentstring.enable = true;
+      web-devicons.enable = true;
+      whitespace.enable = true;
+    };
 
-  xdg.configFile."nvim/lua".source = ./nvim/lua;
+    keymaps = [
+    # Telescope
+    { mode = "n"; key = "<C-p>"; action = "<cmd>Telescope find_files<cr>"; options.noremap = true; }
+    # You can simplify the C-b mapping; the multiple commands are redundant.
+    { mode = "n"; key = "<C-b>"; action = "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>"; options.noremap = true; }
+
+    # Saving
+    { mode = "n"; key = "<C-s>"; action = ":w<CR>"; options.noremap = true; }
+
+    # Buffer and tab navigation
+    { mode = "n"; key = "<F2>"; action = ":bp<CR>"; options.noremap = true; }
+    { mode = "n"; key = "<F3>"; action = ":bn<CR>"; options.noremap = true; }
+    { mode = "n"; key = "<F4>"; action = ":bd<CR>"; options.noremap = true; }
+    { mode = "n"; key = "<F5>"; action = ":tabp<CR>"; options.noremap = true; }
+    { mode = "n"; key = "<F6>"; action = ":tabn<CR>"; options.noremap = true; }
+    { mode = "n"; key = "<F7>"; action = ":tabc<CR>"; options.noremap = true; }
+
+    # Toggles
+    { mode = "n"; key = "<F9>"; action = ":set hlsearch!<CR>"; options.noremap = true; }
+    { mode = "n"; key = "<F12>"; action = ":set list!<CR>:redraw!<CR>"; options.noremap = true; }
+
+    # Write with sudo
+    { mode = "c"; key = "w!!"; action = "w !sudo tee > /dev/null %"; options.noremap = true; }
+    ];
+  };
 }
