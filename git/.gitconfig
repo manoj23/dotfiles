@@ -1,5 +1,6 @@
 [core]
 	editor = nvim
+	page = less --mouse
 
 [user]
 	name = Georges Savoundararadj
