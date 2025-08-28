@@ -69,6 +69,7 @@
     pkgs.minicom
     pkgs.ninja
     pkgs.nmap
+    pkgs.p7zip
     pkgs.picocom
     pkgs.pkg-config
     pkgs.pbzip2
