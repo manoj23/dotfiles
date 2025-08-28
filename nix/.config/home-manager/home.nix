@@ -77,6 +77,7 @@
     ]))
     pkgs.radare2
     pkgs.ranger
+    pkgs.rapidgzip
     pkgs.rename
     pkgs.ripgrep
     pkgs.rustup
