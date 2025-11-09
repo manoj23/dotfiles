@@ -43,20 +43,20 @@ in
       vim.opt.colorcolumn = "80"
 
       local SetTab = function(args)
-      local tabsize = tonumber(args.args) or 4
-      vim.opt.tabstop = tabsize
-      vim.opt.shiftwidth = tabsize
+        local tabsize = tonumber(args.args) or 4
+        vim.opt.tabstop = tabsize
+        vim.opt.shiftwidth = tabsize
       end
       local UseSpace = function(args)
-      local tabsize = tonumber(args.args) or 4
-      SetTab({ args = tabsize })
-      vim.opt.expandtab = true
+        local tabsize = tonumber(args.args) or 4
+        SetTab({ args = tabsize })
+        vim.opt.expandtab = true
       end
 
       local UseTab = function(args)
-      local tabsize = tonumber(args.args) or 4
-      SetTab({ args = tabsize })
-      vim.opt.expandtab = false  -- Use tabs instead of spaces
+        local tabsize = tonumber(args.args) or 4
+        SetTab({ args = tabsize })
+        vim.opt.expandtab = false  -- Use tabs instead of spaces
       end
 
       vim.api.nvim_create_user_command(
@@ -112,8 +112,8 @@ in
             cpp = [ "clang_format" ];
             "_" = [
               "squeeze_blanks"
-                "trim_whitespace"
-                "trim_newlines"
+              "trim_whitespace"
+              "trim_newlines"
             ];
           };
         };
@@ -150,29 +150,29 @@ in
         enable = true;
         grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
           bash
-            cmake
-            git_config
-            gitcommit
-            git_rebase
-            gitignore
-            gitattributes
-            html
-            javascript
-            json
-            lua
-            markdown
-            markdown_inline
-            nix
-            python
-            query
-            rust
-            ron
-            regex
-            tsx
-            typescript
-            vim
-            yaml
-            ];
+          cmake
+          git_config
+          gitcommit
+          git_rebase
+          gitignore
+          gitattributes
+          html
+          javascript
+          json
+          lua
+          markdown
+          markdown_inline
+          nix
+          python
+          query
+          rust
+          ron
+          regex
+          tsx
+          typescript
+          vim
+          yaml
+        ];
       };
       todo-comments.enable = true;
       treesitter-context.enable = true;
