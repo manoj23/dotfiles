@@ -20,6 +20,7 @@ in
       gopls
       hadolint
       lua-language-server
+      markdownlint-cli
       marksman
       neocmakelsp
       pyright
