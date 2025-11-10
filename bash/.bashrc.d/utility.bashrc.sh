@@ -17,7 +17,7 @@ kermit()
 }
 
 chksumfd () {
-	find $1 -type f -print0 | LC_ALL=C sort -z | xargs -0 sha256sum | sha256sum
+	find $1 -type f -print0 -not -name ".DS_Store" | LC_ALL=C sort -z | xargs -0 sha256sum | sha256sum
 }
 
 copy_sd()
