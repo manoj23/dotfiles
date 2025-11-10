@@ -145,6 +145,15 @@ in
         extensions = {
           fzf-native.enable = true;
         };
+        settings = {
+          defaults = {
+            file_ignore_patterns = [
+              "^.git/"
+              "^.mypy_cache/"
+              "^__pycache__/"
+            ];
+          };
+        };
       };
       treesitter = {
         enable = true;
@@ -186,7 +195,7 @@ in
 
     keymaps = [
     # Telescope
-    { mode = "n"; key = "<C-p>"; action = "<cmd>Telescope find_files<cr>"; options.noremap = true; }
+    { mode = "n"; key = "<C-p>"; action = "<cmd>Telescope find_files hidden=true<cr>"; options.noremap = true; }
     # You can simplify the C-b mapping; the multiple commands are redundant.
     { mode = "n"; key = "<C-b>"; action = "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>"; options.noremap = true; }
 
