@@ -18,6 +18,7 @@ in
       cpplint
       fzf
       gopls
+      hadolint
       lua-language-server
       marksman
       neocmakelsp
