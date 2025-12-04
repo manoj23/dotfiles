@@ -48,6 +48,7 @@ stow bash
 stow ckermit
 stow git
 stow i3
+stow kitty
 stow radare2
 stow screen
 stow termite
