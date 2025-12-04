@@ -40,7 +40,7 @@ for bashrc in ~/.bashrc.d/*; do
 	source "$bashrc"
 done
 
-[[ -d "~/.bashrc.d.private/" ]] && for bashrc in ~/.bashrc.d.private/*; do
+[[ -d ~/.bashrc.d.private/ ]] && for bashrc in ~/.bashrc.d.private/*; do
 	# shellcheck source=/dev/null
 	source "$bashrc"
 done
