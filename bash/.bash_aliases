@@ -3,7 +3,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ag='rg'
-alias cat='bat'
+alias cat='bat --style=changes,header-filename,snip'
 alias rg='rg --color=always -g \!tags'
 alias less='LESSCHARSET=CP1251 less -R'
 alias l='less'
