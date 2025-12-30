@@ -71,6 +71,12 @@ in
           "SetTab", SetTab, { nargs = "?" }
           )
 
+      vim.api.nvim_create_user_command(
+          "TrimWhitespace", function()
+            require('whitespace-nvim').trim()
+          end, {}
+          )
+
       UseSpace({ args = "4" })
 
       vim.api.nvim_create_autocmd("FileType", {
