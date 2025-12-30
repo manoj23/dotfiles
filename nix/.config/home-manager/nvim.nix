@@ -110,6 +110,12 @@ in
               "shfmt"
             ];
             cpp = [ "clang_format" ];
+            rust = [ "rustfmt" ];
+            "*" = [
+              "codespell"
+              "trim_whitespace"
+              "trim_newlines"
+            ];
             "_" = [
               "squeeze_blanks"
               "trim_whitespace"
