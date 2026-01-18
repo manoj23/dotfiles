@@ -83,6 +83,7 @@
     pkgs.ripgrep
     pkgs.rustup
     pkgs.shellcheck
+    pkgs.sloc
     pkgs.stow
     pkgs.wget
     pkgs.tig
