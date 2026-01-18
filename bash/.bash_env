@@ -15,6 +15,13 @@ export PKG_CONFIG_PATH=~/lib/pkgconfig:~/usr/lib/pkgconfig:~/usr/lib64/pkgconfig
 export USE_CCACHE=1
 export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}
 export GO_PROXY=direct
+if [[ "$OSTYPE" == "darwin"* ]]; then
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+else
+export LANG=en_US.utf8
+export LC_ALL=en_US.utf8
+fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
 export LANG=en_US.UTF-8
