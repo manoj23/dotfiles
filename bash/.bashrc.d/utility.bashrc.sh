@@ -129,3 +129,11 @@ ccat()
 {
 	$(__which cat) "$@"
 }
+
+ssh() {
+    if [ -z "$KITTY_WINDOW_ID" ]; then
+        kitty +kitten ssh "$@"
+    else
+        command ssh "$@"
+    fi
+}
