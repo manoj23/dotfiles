@@ -70,9 +70,9 @@
     pkgs.ninja
     pkgs.nmap
     pkgs.p7zip
+    pkgs.pbzip2
     pkgs.picocom
     pkgs.pkg-config
-    pkgs.pbzip2
     (pkgs.python3.withPackages (ppkgs: [
       ppkgs.pip
     ]))
