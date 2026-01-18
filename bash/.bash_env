@@ -6,6 +6,7 @@ export HISTFILESIZE=
 export HISTSIZE=
 export HISTFILE=~/.bash_history_
 export LD_LIBRARY_PATH=~/lib:~/usr/lib:~/usr/lib64:$LD_LIBRARY_PATH
+export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive
 export LOCK_DIR="/var/lock/lockdev/"
 export PATH="$HOME:~/.cargo/bin:$PATH"
 export PATH="$HOME/go/bin:~/bin/:$PATH"
