@@ -46,6 +46,7 @@ fi
 
 stow bash
 stow ckermit
+stow davfs2
 stow git
 stow i3
 stow kitty
