@@ -1,6 +1,6 @@
 # Copied from https://github.com/junegunn/fzf/wiki/Examples
 
-if [ "$0" = "bash" ]; then
+if [ "$0" = "bash" ] && [[ $- == *i* ]]; then
 	bind -x '"\C-p": ff'
 	bind -x '"\C-b": fco'
 fi
