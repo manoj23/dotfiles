@@ -137,3 +137,21 @@ ssh() {
         command ssh "$@"
     fi
 }
+
+adb_restart()
+{
+    if [ $# -ne 1 ]; then
+        echo "remote not given, Bye!"
+        return
+    fi
+
+    HOST="$1"
+    adb kill-server;
+    sleep 0.5;
+    PIDS=$(sudo lsof -ti :5037 | xargs)
+    [ -n "$PIDS" ] && sudo kill "$PIDS"
+    adb start-server
+    ssh "$HOST" 'bash -c "adb kill-server && adb start-server"'
+    adb devices > /dev/null
+    ssh "$HOST" 'bash -c "adb devices"'
+}
