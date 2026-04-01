@@ -30,5 +30,7 @@ export ZSH="$HOME/.oh-my-zsh"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Set up mise for runtime management
-eval "$(/home/savoundg/.local/bin/mise activate zsh)"
-source ~/.local/share/mise/completions.zsh
+if command -v mise &>/dev/null; then
+  eval "$(mise activate zsh)"
+  eval "$(mise completions zsh)"
+fi
