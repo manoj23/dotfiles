@@ -49,6 +49,7 @@
     pkgs.findutils
     pkgs.fzf
     pkgs.gawk
+    pkgs.ghostscript
     pkgs.gitFull
     pkgs.gnugrep
     pkgs.gnused
