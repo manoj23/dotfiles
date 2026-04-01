@@ -34,3 +34,13 @@ if command -v mise &>/dev/null; then
   eval "$(mise activate zsh)"
   eval "$(mise completions zsh)"
 fi
+_set_kitty_tab_title() {
+  local folder="${PWD##*/}"
+  if [[ -n "$SSH_CONNECTION" ]]; then
+    printf '\e]0;ssh:%s\a' "$folder"
+  else
+    kitty @ set-tab-title "$folder"
+  fi
+}
+precmd() { _set_kitty_tab_title }
+chpwd() { _set_kitty_tab_title }
