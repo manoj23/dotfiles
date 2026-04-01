@@ -1,3 +1,4 @@
+export BUN_INSTALL="$HOME/.bun"
 export CHERRY_PICK_DIR=
 export EDITOR=nvim
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
@@ -12,6 +13,7 @@ export PATH="$HOME:~/.cargo/bin:$PATH"
 export PATH="$HOME/go/bin:~/bin/:$PATH"
 export PATH="$HOME/usr/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
+export PATH="$BUN_INSTALL/bin:$PATH"
 export PKG_CONFIG_PATH=~/lib/pkgconfig:~/usr/lib/pkgconfig:~/usr/lib64/pkgconfig:/usr/lib64/pkgconfig:$PKG_CONFIG_PATH
 export USE_CCACHE=1
 export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}
@@ -31,6 +33,9 @@ else
 export LANG=en_US.utf8
 export LC_ALL=en_US.utf8
 fi
+
+# bun completions
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # shellcheck source=/dev/null
 [[ -s  ~/.bash_aliases ]] && . ~/.bash_aliases
