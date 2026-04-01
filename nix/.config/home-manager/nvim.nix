@@ -74,6 +74,7 @@ in
       vim.api.nvim_create_user_command(
           "TrimWhitespace", function()
             require('whitespace-nvim').trim()
+            vim.cmd('update')
           end, {}
           )
 
