@@ -61,6 +61,7 @@
     pkgs.hexedit
     pkgs.highlight
     pkgs.htop
+    pkgs.imagemagick
     pkgs.jq
     pkgs.lftp
     pkgs.kitty
