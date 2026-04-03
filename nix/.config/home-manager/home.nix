@@ -64,6 +64,7 @@
     pkgs.imagemagick
     pkgs.jq
     pkgs.lftp
+    pkgs.lsof
     pkgs.kitty
     pkgs.maven
     pkgs.meld
