@@ -154,4 +154,19 @@ adb_restart()
     ssh "$HOST" 'bash -c "adb kill-server && adb start-server"'
     adb devices > /dev/null
     ssh "$HOST" 'bash -c "adb devices"'
+
+davfs_mount() {
+    if [ ! -d webdav ]; then
+        echo "webdav/ does not exist, Bye!"
+        return
+    fi
+
+    if [ "$#" -ne 1 ]; then
+        echo "endpoint not given, Bye!"
+        return
+    fi
+
+    ENDPOINT="$1"
+
+    sudo mount -t davfs -o user,uid=$(id -u),gid=$(id -g),file_mode=664,dir_mode=775 "https://$ENDPOINT" webdav
 }
